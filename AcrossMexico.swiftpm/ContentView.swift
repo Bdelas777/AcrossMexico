@@ -4,7 +4,7 @@ import SpriteKit
 struct ContentView: View {
     
     @State private var font: Font?
-    // classe para exibicao de cenários
+    // clase para ver los escenarios
     var scene: SKScene {
         let scene = StartScene()
         scene.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -14,7 +14,7 @@ struct ContentView: View {
     }
     
     var body: some View {
-        // uma visualizacao swiftui que renderiza uma cena do spritekit
+        // renderizar una escena a spritekit
         SpriteView(scene: scene)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .aspectRatio(CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), contentMode: .fill)

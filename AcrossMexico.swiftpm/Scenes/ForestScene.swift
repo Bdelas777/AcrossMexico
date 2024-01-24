@@ -60,7 +60,7 @@ class ForestScene: SKScene {
     var indexText: Int = -1
     
     var introText: [String] = [
-        "My name is Steve, I'm a scientist, and I'm very relieved \n\nthat you showed up here to help me create natural remedies \n\nto treat common diseases here in the Amazon region!",
+        "My name is Trevor, I'm a scientist, and I'm very relieved \n\nthat you showed up here to help me create natural remedies \n\nto treat common diseases here in the Amazon region!",
         "But first of all, I would like to know if you know about \n\nthe so-called medicinal plants.",
         "No? Okay, let me explain. Medicinal plants are plants that \n\nhave pharmacological action, in other words, they help \n\nin the cure or treatment of several diseases.",
         "And here in the Amazon region it is quite common to use \n\nthe benefits of these plants to cure illnesses.",

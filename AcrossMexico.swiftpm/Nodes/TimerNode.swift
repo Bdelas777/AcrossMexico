@@ -13,8 +13,8 @@ class TimerNode: SKNode {
     var label: SKLabelNode = SKLabelNode()
     var lastUpdatedTime: TimeInterval = 0.0
     var changeTime: TimeInterval = 1 // pulsacao
-    var seconds: Int = 60
-    var minutes: Int = 1
+    var seconds: Int = 120
+    var minutes: Int = 2
    
     override init() {
         super.init()
