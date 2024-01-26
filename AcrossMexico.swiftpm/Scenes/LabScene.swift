@@ -13,10 +13,10 @@ class LabScene: SKScene {
     public var currentNode: SKNode?
     
     var bottleLabNode: BottleNode?
-    var guacoLabNode: PlantsNode?
-    var andirobaLabNode: AndirobaNode?
-    var boldoLabNode: BoldoNode?
-    var canaLabNode: CanaNode?
+    var guacoLabNode: OlmecaNode?
+    var andirobaLabNode: SculptureNode?
+    var boldoLabNode: CrossNode?
+    var canaLabNode: MaskNode?
     
     var fireLab: Fire?
     var smoke: Smoke?
@@ -65,29 +65,29 @@ class LabScene: SKScene {
         setupLab()
         self.physicsWorld.contactDelegate = self
         
-        if GeneralScene.shared.plantsCollected.contains("guacoo") {
-            guacoLabNode = PlantsNode()
+        if GeneralScene.shared.objectsCollected.contains("guacoo") {
+            guacoLabNode = OlmecaNode()
             guacoLabNode?.name = "guacoplantLab"
             guacoLabNode?.position = CGPoint(x: -210, y: -100)
             guacoLabNode?.setScale(2)
             self.addChild(guacoLabNode!)
         }
-        if GeneralScene.shared.plantsCollected.contains("andirobaa") {
-            andirobaLabNode = AndirobaNode()
+        if GeneralScene.shared.objectsCollected.contains("andirobaa") {
+            andirobaLabNode = SculptureNode()
             andirobaLabNode?.name = "andirobaplantLab"
             andirobaLabNode?.position = CGPoint(x: -90, y: -100)
             andirobaLabNode?.setScale(2)
             self.addChild(andirobaLabNode!)
         }
-        if GeneralScene.shared.plantsCollected.contains("boldoo") {
-            boldoLabNode = BoldoNode()
+        if GeneralScene.shared.objectsCollected.contains("boldoo") {
+            boldoLabNode = CrossNode()
             boldoLabNode?.name = "boldoplantLab"
             boldoLabNode?.position = CGPoint(x: 90, y: -100)
             boldoLabNode?.setScale(2)
             self.addChild(boldoLabNode!)
         }
-        if GeneralScene.shared.plantsCollected.contains("canaa") {
-            canaLabNode = CanaNode()
+        if GeneralScene.shared.objectsCollected.contains("canaa") {
+            canaLabNode = MaskNode()
             canaLabNode?.name = "canaplantLab"
             canaLabNode?.position = CGPoint(x: 210, y: -100)
             canaLabNode?.setScale(2)
@@ -116,7 +116,7 @@ class LabScene: SKScene {
         cientistAgain?.setHide(false)
         self.addChild(cientistAgain!)
         
-        if GeneralScene.shared.plantsCollected.contains("guacoo"){
+        if GeneralScene.shared.objectsCollected.contains("guacoo"){
             cientistAgain?.change(text: "Phew!! Thank goodness you brought the plant in time.")
             
             nextButtonLab = SKButtonNode(imageNamed: "right2", clickAction: { [weak self] in

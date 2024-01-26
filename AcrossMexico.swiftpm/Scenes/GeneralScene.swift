@@ -14,10 +14,10 @@ class GeneralScene: SKScene {
     var sceneNode = SKNode()
     
     var internNode: InternNode?
-    var gaucoNode: PlantsNode?
-    var andirobaNode: AndirobaNode?
-    var boldoNode: BoldoNode?
-    var canaNode: CanaNode?
+    var olmecaNode: OlmecaNode?
+    var sculptureNode: SculptureNode?
+    var crossNode: CrossNode?
+    var maskNode: MaskNode?
     var labNode: LabNode?
     var vaseNode: VaseNode?
     var cannonNode: CannonNode?
@@ -26,33 +26,33 @@ class GeneralScene: SKScene {
     var rightButton: SKButtonNode?
     var leftButton: SKButtonNode?
     
-    var infoPlantsButton: SKButtonNode?
+    var infoOlmecaButton: SKButtonNode?
     var vaseInfoButton: SKButtonNode?
-    var andirobaInfoButton: SKButtonNode?
-    var boldoInfoButton: SKButtonNode?
-    var canaInfoButton: SKButtonNode?
+    var sculptureInfoButton: SKButtonNode?
+    var crossInfoButton: SKButtonNode?
+    var maskInfoButton: SKButtonNode?
     var cannonInfoButton: SKButtonNode?
     
-    var collectPlantsButton: SKButtonNode?
-    var collectAndirobaButton: SKButtonNode?
-    var collectBoldoButton: SKButtonNode?
-    var collectCanaButton: SKButtonNode?
+    var collectOlmecaButton: SKButtonNode?
+    var collectSculptureButton: SKButtonNode?
+    var collectCrossButton: SKButtonNode?
+    var collectMaskButton: SKButtonNode?
     var collectVaseButton: SKButtonNode?
     var collectCannonButton: SKButtonNode?
     
-    var cancelPlantsButton: SKButtonNode?
-    var cancelAndirobaButton: SKButtonNode?
-    var cancelBoldoButton: SKButtonNode?
-    var cancelCanaButton: SKButtonNode?
+    var cancelOlmecaButton: SKButtonNode?
+    var cancelSculptureButton: SKButtonNode?
+    var cancelCrossButton: SKButtonNode?
+    var cancelMaskButton: SKButtonNode?
     var cancelVaseButton: SKButtonNode?
     var cancelCannonButton: SKButtonNode?
     var nextTalkButton: SKButtonNode?
     
     var vaseCard: SKBalloonNode?
-    var guacoCard: SKBalloonNode?
-    var andirobaCard: SKBalloonNode?
-    var boldoCard: SKBalloonNode?
-    var canaCard: SKBalloonNode?
+    var olmecaCard: SKBalloonNode?
+    var sculptureCard: SKBalloonNode?
+    var crossCard: SKBalloonNode?
+    var maskCard: SKBalloonNode?
     var cannonCard: SKBalloonNode?
     var cientist: SKBalloonNode?
     
@@ -65,7 +65,7 @@ class GeneralScene: SKScene {
     var pauseTime: Bool = false
     
     public static let shared = GeneralScene()
-    var plantsCollected: [String] = []
+    var objectsCollected: [String] = []
     var parallaxNodes: [SKNode] = []
     var indexText: Int = -1
     
@@ -104,33 +104,33 @@ class GeneralScene: SKScene {
         vaseNode?.position.x = 1000
         self.addChild(vaseNode!)
         
-        andirobaNode = AndirobaNode()
-        andirobaNode?.name = "andiroba"
-        andirobaNode?.zPosition = -1
-        andirobaNode?.position.y = -75
-        andirobaNode?.position.x = 200
-        self.addChild(andirobaNode!)
+        sculptureNode = SculptureNode()
+        sculptureNode?.name = "Sculpture"
+        sculptureNode?.zPosition = -1
+        sculptureNode?.position.y = -75
+        sculptureNode?.position.x = 200
+        self.addChild(sculptureNode!)
         
-        boldoNode = BoldoNode()
-        boldoNode?.name = "boldo"
-        boldoNode?.zPosition = -1
-        boldoNode?.position.y = -75
-        boldoNode?.position.x = 400
-        self.addChild(boldoNode!)
+        crossNode = CrossNode()
+        crossNode?.name = "Cross"
+        crossNode?.zPosition = -1
+        crossNode?.position.y = -75
+        crossNode?.position.x = 400
+        self.addChild(crossNode!)
         
-        canaNode = CanaNode()
-        canaNode?.name = "cana"
-        canaNode?.zPosition = -1
-        canaNode?.position.y = -75
-        canaNode?.position.x = 600
-        self.addChild(canaNode!)
+        maskNode = MaskNode()
+        maskNode?.name = "Mask"
+        maskNode?.zPosition = -1
+        maskNode?.position.y = -75
+        maskNode?.position.x = 600
+        self.addChild(maskNode!)
         
-        gaucoNode = PlantsNode()
-        gaucoNode?.name = "guaco"
-        gaucoNode?.zPosition = -1
-        gaucoNode?.position.y = -72
-        gaucoNode?.position.x = 800
-        self.addChild(gaucoNode!)
+        olmecaNode = OlmecaNode()
+        olmecaNode?.name = "Olmeca"
+        olmecaNode?.zPosition = -1
+        olmecaNode?.position.y = -72
+        olmecaNode?.position.x = 800
+        self.addChild(olmecaNode!)
         
         labNode = LabNode()
         labNode?.name = "lab_semfundo"
@@ -212,33 +212,33 @@ class GeneralScene: SKScene {
         vaseCard?.setHide(true)
         self.addChild(vaseCard!)
         
-        andirobaCard = SKBalloonNode(imageNamed: "andiroba_card")
-        andirobaCard?.position = CGPoint(x: 200 , y: 15)
-        andirobaCard?.zPosition = 2
-        andirobaCard?.setScale(0.2)
-        andirobaCard?.setHide(true)
-        self.addChild(andirobaCard!)
+        sculptureCard = SKBalloonNode(imageNamed: "andiroba_card")
+        sculptureCard?.position = CGPoint(x: 200 , y: 15)
+        sculptureCard?.zPosition = 2
+        sculptureCard?.setScale(0.2)
+        sculptureCard?.setHide(true)
+        self.addChild(sculptureCard!)
         
-        boldoCard = SKBalloonNode(imageNamed: "boldo_card")
-        boldoCard?.position = CGPoint(x: 400, y: 15)
-        boldoCard?.zPosition = 2
-        boldoCard?.setScale(0.2)
-        boldoCard?.setHide(true)
-        self.addChild(boldoCard!)
+        crossCard = SKBalloonNode(imageNamed: "boldo_card")
+        crossCard?.position = CGPoint(x: 400, y: 15)
+        crossCard?.zPosition = 2
+        crossCard?.setScale(0.2)
+        crossCard?.setHide(true)
+        self.addChild(crossCard!)
         
-        canaCard = SKBalloonNode(imageNamed: "cana_card")
-        canaCard?.position = CGPoint(x: 600, y: 15)
-        canaCard?.zPosition = 2
-        canaCard?.setScale(0.2)
-        canaCard?.setHide(true)
-        self.addChild(canaCard!)
+        maskCard = SKBalloonNode(imageNamed: "cana_card")
+        maskCard?.position = CGPoint(x: 600, y: 15)
+        maskCard?.zPosition = 2
+        maskCard?.setScale(0.2)
+        maskCard?.setHide(true)
+        self.addChild(maskCard!)
         
-        guacoCard = SKBalloonNode(imageNamed: "guaco_card")
-        guacoCard?.position = CGPoint(x: 800, y: 15)
-        guacoCard?.zPosition = 2
-        guacoCard?.setScale(0.2)
-        guacoCard?.setHide(true)
-        self.addChild(guacoCard!)
+        olmecaCard = SKBalloonNode(imageNamed: "guaco_card")
+        olmecaCard?.position = CGPoint(x: 800, y: 15)
+        olmecaCard?.zPosition = 2
+        olmecaCard?.setScale(0.2)
+        olmecaCard?.setHide(true)
+        self.addChild(olmecaCard!)
         
         cientist = SKBalloonNode(imageNamed: "cientist3")
         cientist?.position = CGPoint(x: -4, y: 4)

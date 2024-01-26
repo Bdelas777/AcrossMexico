@@ -32,7 +32,7 @@ class LostScene: SKScene {
             scene.scaleMode = .aspectFill
             scene.anchorPoint = .init(x: 0.5, y: 0.5)
             self?.view?.presentScene(scene)
-            GeneralScene.shared.plantsCollected = []
+            GeneralScene.shared.objectsCollected = []
         })
         restart?.position = CGPoint(x: -180, y: -70)
         restart?.setScale(0.6)
