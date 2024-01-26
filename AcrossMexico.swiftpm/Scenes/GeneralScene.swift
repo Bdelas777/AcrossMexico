@@ -1,15 +1,15 @@
 //
-//  ForestScene.swift
-//  ForestCure
+//  GeneralScene.swift
+//  AcrossMexico
 //
-//  Created by Anne Victoria Batista Auzier on 03/04/23.
+//  Created by Bernardo de la Sierra on 23/01/24.
 //
 
 import Foundation
 import SpriteKit
 import SwiftUI
 
-class ForestScene: SKScene {
+class GeneralScene: SKScene {
     
     var sceneNode = SKNode()
     
@@ -19,31 +19,41 @@ class ForestScene: SKScene {
     var boldoNode: BoldoNode?
     var canaNode: CanaNode?
     var labNode: LabNode?
+    var vaseNode: VaseNode?
+    var cannonNode: CannonNode?
     var timer: TimerNode?
     
     var rightButton: SKButtonNode?
     var leftButton: SKButtonNode?
     
     var infoPlantsButton: SKButtonNode?
+    var vaseInfoButton: SKButtonNode?
     var andirobaInfoButton: SKButtonNode?
     var boldoInfoButton: SKButtonNode?
     var canaInfoButton: SKButtonNode?
+    var cannonInfoButton: SKButtonNode?
     
     var collectPlantsButton: SKButtonNode?
     var collectAndirobaButton: SKButtonNode?
     var collectBoldoButton: SKButtonNode?
     var collectCanaButton: SKButtonNode?
+    var collectVaseButton: SKButtonNode?
+    var collectCannonButton: SKButtonNode?
     
     var cancelPlantsButton: SKButtonNode?
     var cancelAndirobaButton: SKButtonNode?
     var cancelBoldoButton: SKButtonNode?
     var cancelCanaButton: SKButtonNode?
+    var cancelVaseButton: SKButtonNode?
+    var cancelCannonButton: SKButtonNode?
     var nextTalkButton: SKButtonNode?
     
+    var vaseCard: SKBalloonNode?
     var guacoCard: SKBalloonNode?
     var andirobaCard: SKBalloonNode?
     var boldoCard: SKBalloonNode?
     var canaCard: SKBalloonNode?
+    var cannonCard: SKBalloonNode?
     var cientist: SKBalloonNode?
     
     var backgroundForestMusic = SKAudioNode(fileNamed: "startSound.mp3")
@@ -54,14 +64,16 @@ class ForestScene: SKScene {
     var moveSpeed: CGFloat = 2
     var pauseTime: Bool = false
     
-    public static let shared = ForestScene()
+    public static let shared = GeneralScene()
     var plantsCollected: [String] = []
     var parallaxNodes: [SKNode] = []
     var indexText: Int = -1
     
+    
+    // Text Intro
     var introText: [String] = [
-        "My name is Trevor, I'm a scientist, and I'm very relieved \n\nthat you showed up here to help me create natural remedies \n\nto treat common diseases here in the Amazon region!",
-        "But first of all, I would like to know if you know about \n\nthe so-called medicinal plants.",
+        "Hola soy Bernardo y sere tu guia por el juego, ",
+        "Para conoer lo que hay en las diversas ciudades en las que vive.",
         "No? Okay, let me explain. Medicinal plants are plants that \n\nhave pharmacological action, in other words, they help \n\nin the cure or treatment of several diseases.",
         "And here in the Amazon region it is quite common to use \n\nthe benefits of these plants to cure illnesses.",
         "Thanks to my intense study in the indigenous communities, \n\nI have learned a lot about how much these plants can \n\noffer us if we use them in the right way.",
@@ -77,6 +89,20 @@ class ForestScene: SKScene {
         internNode?.name = "intern"
         internNode?.position.y = -80
         self.addChild(internNode!)
+        
+        cannonNode = CannonNode()
+        cannonNode?.name = "Cannon"
+        cannonNode?.zPosition = -1
+        cannonNode?.position.y = -75
+        cannonNode?.position.x = 1200
+        self.addChild(cannonNode!)
+        
+        vaseNode = VaseNode()
+        vaseNode?.name = "Vase"
+        vaseNode?.zPosition = -1
+        vaseNode?.position.y = -75
+        vaseNode?.position.x = 1000
+        self.addChild(vaseNode!)
         
         andirobaNode = AndirobaNode()
         andirobaNode?.name = "andiroba"
@@ -114,7 +140,7 @@ class ForestScene: SKScene {
         self.addChild(labNode!)
         
         setupBackgroundParallax()
-        backgroundForestSound()
+        backgroundGeneralSound()
     }
     
     override func didMove(to view: SKView) {
@@ -127,7 +153,7 @@ class ForestScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         if (direction != 0) {
-            self.internNode?.xScale = direction // espelhar o player
+            self.internNode?.xScale = direction
             self.internNode?.position.x += self.direction * moveSpeed
         }
         self.camera?.run(.moveTo(x: self.internNode?.position.x ?? 0, duration: 0.4))
@@ -171,6 +197,21 @@ class ForestScene: SKScene {
         self.camera?.addChild(timer!)
         
         //===== Discover Image ====
+        
+        cannonCard = SKBalloonNode(imageNamed: "boldo_card")
+        cannonCard?.position = CGPoint(x: 1200 , y: 15)
+        cannonCard?.zPosition = 2
+        cannonCard?.setScale(0.2)
+        cannonCard?.setHide(true)
+        self.addChild(cannonCard!)
+        
+        vaseCard = SKBalloonNode(imageNamed: "andiroba_card")
+        vaseCard?.position = CGPoint(x: 1000 , y: 15)
+        vaseCard?.zPosition = 2
+        vaseCard?.setScale(0.2)
+        vaseCard?.setHide(true)
+        self.addChild(vaseCard!)
+        
         andirobaCard = SKBalloonNode(imageNamed: "andiroba_card")
         andirobaCard?.position = CGPoint(x: 200 , y: 15)
         andirobaCard?.zPosition = 2
@@ -251,5 +292,3 @@ class ForestScene: SKScene {
         self.addChild(nextTalkButton!)
     }
 }
-
-

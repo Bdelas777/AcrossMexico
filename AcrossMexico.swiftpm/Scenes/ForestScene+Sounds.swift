@@ -2,21 +2,21 @@
 import Foundation
 import SpriteKit
 
-extension ForestScene {
+extension GeneralScene {
     
-    func backgroundForestSound() {
+    func backgroundGeneralSound() {
         backgroundForestMusic.run(SKAction.changeVolume(to: Float(0.6), duration: 0))
         backgroundForestMusic.run(.play())
         self.addChild(backgroundForestMusic)
     }
     
-    func collectPlantsSound() {
+    func collectObjectsSound() {
         collectPlantsMusic.run(SKAction.changeVolume(by: Float(0.7), duration: 0))
         collectPlantsMusic.run(.play())
         self.addChild(collectPlantsMusic)
     }
     
-    func cancelPlantsSound(){
+    func cancelObjectsSound(){
         cancelPlantsMusic.run(SKAction.changeVolume(by: Float(0.7), duration: 0))
         cancelPlantsMusic.run(.play())
         self.addChild(cancelPlantsMusic)

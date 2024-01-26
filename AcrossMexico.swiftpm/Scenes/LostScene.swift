@@ -27,12 +27,12 @@ class LostScene: SKScene {
     override func didMove(to view: SKView) {
         self.scaleMode = .aspectFill
         restart = SKButtonNode(imageNamed: "retry", clickAction: {[weak self] in
-            let scene = ForestScene()
+            let scene = GeneralScene()
             scene.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             scene.scaleMode = .aspectFill
             scene.anchorPoint = .init(x: 0.5, y: 0.5)
             self?.view?.presentScene(scene)
-            ForestScene.shared.plantsCollected = []
+            GeneralScene.shared.plantsCollected = []
         })
         restart?.position = CGPoint(x: -180, y: -70)
         restart?.setScale(0.6)

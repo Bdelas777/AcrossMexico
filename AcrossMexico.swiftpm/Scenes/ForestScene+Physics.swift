@@ -1,13 +1,112 @@
 
 import SpriteKit
 
-extension ForestScene: SKPhysicsContactDelegate {
+extension GeneralScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         
+        // Cannon
+        if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "Cannon" || contact.bodyA.node?.name == "Cannon" && contact.bodyB.node?.name == "intern" {
+            
+            self.cannonInfoButton = SKButtonNode(imageNamed: "learnMore", clickAction: { [weak self] in
+                
+                self?.cannonCard?.setHide(false)
+                self?.cannonInfoButton?.removeFromParent()
+                self?.pauseTime = true
+                
+                self?.collectCannonButton = SKButtonNode(imageNamed: "pickUp", clickAction: {[weak self] in
+                    self?.cannonCard?.setHide(true)
+                    self?.cannonNode?.removeFromParent()
+                    self?.collectCannonButton?.removeFromParent()
+                    self?.cancelCannonButton?.removeFromParent()
+                    self?.cannonInfoButton?.removeFromParent()
+                    
+                    self?.collectObjectsSound()
+                    GeneralScene.shared.plantsCollected.append("Cannon")
+                    
+                }, unclickAction: {[weak self] in
+                    self?.collectPlantsMusic.removeFromParent()
+                    self!.pauseTime = false
+                })
+                self?.collectCannonButton?.position.x = 1240
+                self?.collectVaseButton?.position.y = -60
+                self?.collectCannonButton?.setScale(0.25)
+                self?.addChild(self!.collectCannonButton!)
+                
+                self?.cancelCannonButton = SKButtonNode(imageNamed: "leave", clickAction: {[weak self] in
+                    self?.cannonCard?.setHide(true)
+                    self?.cancelCannonButton?.removeFromParent()
+                    self?.collectCannonButton?.removeFromParent()
+                    self?.cancelObjectsSound()
+                }, unclickAction: {[weak self] in
+                    self?.cancelPlantsMusic.removeFromParent()
+                    self?.pauseTime = false
+                })
+                self?.cancelCannonButton?.position.x = 1160
+                self?.cancelCannonButton?.position.y = -60
+                self?.cancelCannonButton?.setScale(0.25)
+                self?.addChild(self!.cancelCannonButton!)
+            })
+            self.cannonInfoButton?.position.y = -40
+            self.cannonInfoButton?.position.x = 1200
+            self.cannonInfoButton?.zPosition = -1
+            self.cannonInfoButton?.setScale(0.23)
+            self.addChild(cannonInfoButton!)
+        }
+        
+        // Vase
+        if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "Vase" || contact.bodyA.node?.name == "Vase" && contact.bodyB.node?.name == "intern" {
+            
+            self.vaseInfoButton = SKButtonNode(imageNamed: "learnMore", clickAction: { [weak self] in
+                
+                self?.vaseCard?.setHide(false)
+                self?.vaseInfoButton?.removeFromParent()
+                self?.pauseTime = true
+                
+                self?.collectVaseButton = SKButtonNode(imageNamed: "pickUp", clickAction: {[weak self] in
+                    self?.vaseCard?.setHide(true)
+                    self?.vaseNode?.removeFromParent()
+                    self?.collectVaseButton?.removeFromParent()
+                    self?.cancelVaseButton?.removeFromParent()
+                    self?.vaseInfoButton?.removeFromParent()
+                    
+                    self?.collectObjectsSound()
+                    GeneralScene.shared.plantsCollected.append("Vase")
+                    
+                }, unclickAction: {[weak self] in
+                    self?.collectPlantsMusic.removeFromParent()
+                    self!.pauseTime = false
+                })
+                self?.collectVaseButton?.position.x = 1040
+                self?.collectVaseButton?.position.y = -60
+                self?.collectVaseButton?.setScale(0.25)
+                self?.addChild(self!.collectVaseButton!)
+                
+                self?.cancelVaseButton = SKButtonNode(imageNamed: "leave", clickAction: {[weak self] in
+                    self?.vaseCard?.setHide(true)
+                    self?.cancelVaseButton?.removeFromParent()
+                    self?.collectVaseButton?.removeFromParent()
+                    self?.cancelObjectsSound()
+                }, unclickAction: {[weak self] in
+                    self?.cancelPlantsMusic.removeFromParent()
+                    self?.pauseTime = false
+                })
+                self?.cancelVaseButton?.position.x = 960
+                self?.cancelVaseButton?.position.y = -60
+                self?.cancelVaseButton?.setScale(0.25)
+                self?.addChild(self!.cancelVaseButton!)
+            })
+            self.vaseInfoButton?.position.y = -40
+            self.vaseInfoButton?.position.x = 1000
+            self.vaseInfoButton?.zPosition = -1
+            self.vaseInfoButton?.setScale(0.23)
+            self.addChild(vaseInfoButton!)
+        }
+        
+        // Andiroba
         if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "andiroba" || contact.bodyA.node?.name == "andiroba" && contact.bodyB.node?.name == "intern" {
             
             self.andirobaInfoButton = SKButtonNode(imageNamed: "learnMore", clickAction: { [weak self] in
-                print("SAIBA MAIS")
+                
                 self?.andirobaCard?.setHide(false)
                 self?.andirobaInfoButton?.removeFromParent()
                 self?.pauseTime = true
@@ -19,8 +118,8 @@ extension ForestScene: SKPhysicsContactDelegate {
                     self?.cancelAndirobaButton?.removeFromParent()
                     self?.andirobaInfoButton?.removeFromParent()
                     
-                    self?.collectPlantsSound()
-                    ForestScene.shared.plantsCollected.append("andirobaa")
+                    self?.collectObjectsSound()
+                    GeneralScene.shared.plantsCollected.append("andirobaa")
                     
                 }, unclickAction: {[weak self] in
                     self?.collectPlantsMusic.removeFromParent()
@@ -35,7 +134,7 @@ extension ForestScene: SKPhysicsContactDelegate {
                     self?.andirobaCard?.setHide(true)
                     self?.cancelAndirobaButton?.removeFromParent()
                     self?.collectAndirobaButton?.removeFromParent()
-                    self?.cancelPlantsSound()
+                    self?.cancelObjectsSound()
                 }, unclickAction: {[weak self] in
                     self?.cancelPlantsMusic.removeFromParent()
                     self?.pauseTime = false
@@ -66,8 +165,8 @@ extension ForestScene: SKPhysicsContactDelegate {
                     self?.collectBoldoButton?.removeFromParent()
                     self?.cancelBoldoButton?.removeFromParent()
                     self?.boldoInfoButton?.removeFromParent()
-                    self?.collectPlantsSound()
-                    ForestScene.shared.plantsCollected.append("boldoo")
+                    self?.collectObjectsSound()
+                    GeneralScene.shared.plantsCollected.append("boldoo")
                     
                 }, unclickAction: {[weak self] in
                     self?.collectPlantsMusic.removeFromParent()
@@ -83,7 +182,7 @@ extension ForestScene: SKPhysicsContactDelegate {
                     self?.cancelBoldoButton?.removeFromParent()
                     self?.collectBoldoButton?.removeFromParent()
                     
-                    self?.cancelPlantsSound()
+                    self?.cancelObjectsSound()
                 }, unclickAction: {[weak self] in
                     self?.cancelPlantsMusic.removeFromParent()
                     self?.pauseTime = false
@@ -115,8 +214,8 @@ extension ForestScene: SKPhysicsContactDelegate {
                     self?.collectCanaButton?.removeFromParent()
                     self?.cancelCanaButton?.removeFromParent()
                     self?.canaInfoButton?.removeFromParent()
-                    self?.collectPlantsSound()
-                    ForestScene.shared.plantsCollected.append("canaa")
+                    self?.collectObjectsSound()
+                    GeneralScene.shared.plantsCollected.append("canaa")
                     
                 }, unclickAction: {[weak self] in
                     self?.collectPlantsMusic.removeFromParent()
@@ -132,7 +231,7 @@ extension ForestScene: SKPhysicsContactDelegate {
                     self?.cancelCanaButton?.removeFromParent()
                     self?.collectCanaButton?.removeFromParent()
                     
-                    self?.cancelPlantsSound()
+                    self?.cancelObjectsSound()
                 }, unclickAction: {[weak self] in
                     self?.cancelPlantsMusic.removeFromParent()
                     self?.pauseTime = false
@@ -164,8 +263,8 @@ extension ForestScene: SKPhysicsContactDelegate {
                     self?.collectPlantsButton?.removeFromParent()
                     self?.cancelPlantsButton?.removeFromParent()
                     self?.infoPlantsButton?.removeFromParent()
-                    self?.collectPlantsSound()
-                    ForestScene.shared.plantsCollected.append("guacoo")
+                    self?.collectObjectsSound()
+                    GeneralScene.shared.plantsCollected.append("guacoo")
                     
                 }, unclickAction: { [weak self] in
                     self?.collectPlantsMusic.removeFromParent()
@@ -180,7 +279,7 @@ extension ForestScene: SKPhysicsContactDelegate {
                     self?.guacoCard?.setHide(true)
                     self?.cancelPlantsButton?.removeFromParent()
                     self?.collectPlantsButton?.removeFromParent()
-                    self?.cancelPlantsSound()
+                    self?.cancelObjectsSound()
                 }, unclickAction: {[weak self] in
                     self?.cancelPlantsMusic.removeFromParent()
                     self?.pauseTime = false
@@ -197,8 +296,8 @@ extension ForestScene: SKPhysicsContactDelegate {
             self.infoPlantsButton?.setScale(0.23)
             self.addChild(infoPlantsButton!)
         }
-        
-        if ForestScene.shared.plantsCollected.count != 0 {
+        //Aqui eliminar el lab
+        if GeneralScene.shared.plantsCollected.count != 0 {
             if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "lab_semfundo" || contact.bodyA.node?.name == "lab_semfundo" && contact.bodyB.node?.name == "intern" {
                 
                 self.infoPlantsButton = SKButtonNode(imageNamed: "enter", clickAction: { [weak self] in

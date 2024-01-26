@@ -14,7 +14,7 @@ class StartScene: SKScene {
     var startInitialSceneMusic = SKAudioNode(fileNamed: "forestSound.mp3")
     
     override func sceneDidLoad() {
-        let backgroundStart = SKSpriteNode(imageNamed: "startImage")
+        let backgroundStart = SKSpriteNode(imageNamed: "StartAcross")
         backgroundStart.texture?.filteringMode = .nearest
         backgroundStart.zPosition = -10
         backgroundStart.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -24,7 +24,7 @@ class StartScene: SKScene {
         startInitialSceneSound()
         
         startButton = SKButtonNode(imageNamed: "playButton", clickAction: {[weak self] in
-            let startScene = ForestScene(size: self!.size)
+            let startScene = GeneralScene(size: self!.size)
             startScene.scaleMode = self!.scaleMode
             self!.view?.presentScene(startScene)
             self?.startInitialSceneMusic.removeFromParent()

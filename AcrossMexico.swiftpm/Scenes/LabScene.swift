@@ -65,28 +65,28 @@ class LabScene: SKScene {
         setupLab()
         self.physicsWorld.contactDelegate = self
         
-        if ForestScene.shared.plantsCollected.contains("guacoo") {
+        if GeneralScene.shared.plantsCollected.contains("guacoo") {
             guacoLabNode = PlantsNode()
             guacoLabNode?.name = "guacoplantLab"
             guacoLabNode?.position = CGPoint(x: -210, y: -100)
             guacoLabNode?.setScale(2)
             self.addChild(guacoLabNode!)
         }
-        if ForestScene.shared.plantsCollected.contains("andirobaa") {
+        if GeneralScene.shared.plantsCollected.contains("andirobaa") {
             andirobaLabNode = AndirobaNode()
             andirobaLabNode?.name = "andirobaplantLab"
             andirobaLabNode?.position = CGPoint(x: -90, y: -100)
             andirobaLabNode?.setScale(2)
             self.addChild(andirobaLabNode!)
         }
-        if ForestScene.shared.plantsCollected.contains("boldoo") {
+        if GeneralScene.shared.plantsCollected.contains("boldoo") {
             boldoLabNode = BoldoNode()
             boldoLabNode?.name = "boldoplantLab"
             boldoLabNode?.position = CGPoint(x: 90, y: -100)
             boldoLabNode?.setScale(2)
             self.addChild(boldoLabNode!)
         }
-        if ForestScene.shared.plantsCollected.contains("canaa") {
+        if GeneralScene.shared.plantsCollected.contains("canaa") {
             canaLabNode = CanaNode()
             canaLabNode?.name = "canaplantLab"
             canaLabNode?.position = CGPoint(x: 210, y: -100)
@@ -116,7 +116,7 @@ class LabScene: SKScene {
         cientistAgain?.setHide(false)
         self.addChild(cientistAgain!)
         
-        if ForestScene.shared.plantsCollected.contains("guacoo"){
+        if GeneralScene.shared.plantsCollected.contains("guacoo"){
             cientistAgain?.change(text: "Phew!! Thank goodness you brought the plant in time.")
             
             nextButtonLab = SKButtonNode(imageNamed: "right2", clickAction: { [weak self] in
