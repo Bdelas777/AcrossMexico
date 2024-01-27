@@ -198,43 +198,43 @@ class GeneralScene: SKScene {
         
         //===== Discover Image ====
         
-        cannonCard = SKBalloonNode(imageNamed: "boldo_card")
-        cannonCard?.position = CGPoint(x: 1200 , y: 15)
+        cannonCard = SKBalloonNode(imageNamed: "Veracruz")
+        cannonCard?.position = CGPoint(x: 1100 , y: 20)
         cannonCard?.zPosition = 2
         cannonCard?.setScale(0.2)
         cannonCard?.setHide(true)
         self.addChild(cannonCard!)
         
-        vaseCard = SKBalloonNode(imageNamed: "andiroba_card")
-        vaseCard?.position = CGPoint(x: 1000 , y: 15)
+        vaseCard = SKBalloonNode(imageNamed: "Cantona")
+        vaseCard?.position = CGPoint(x: 900 , y: 20)
         vaseCard?.zPosition = 2
         vaseCard?.setScale(0.2)
         vaseCard?.setHide(true)
         self.addChild(vaseCard!)
         
-        sculptureCard = SKBalloonNode(imageNamed: "andiroba_card")
-        sculptureCard?.position = CGPoint(x: 200 , y: 15)
+        sculptureCard = SKBalloonNode(imageNamed: "Monte")
+        sculptureCard?.position = CGPoint(x: 100 , y: 30)
         sculptureCard?.zPosition = 2
         sculptureCard?.setScale(0.2)
         sculptureCard?.setHide(true)
         self.addChild(sculptureCard!)
         
-        crossCard = SKBalloonNode(imageNamed: "boldo_card")
-        crossCard?.position = CGPoint(x: 400, y: 15)
+        crossCard = SKBalloonNode(imageNamed: "SanMiguel")
+        crossCard?.position = CGPoint(x: 300, y: 20)
         crossCard?.zPosition = 2
         crossCard?.setScale(0.2)
         crossCard?.setHide(true)
         self.addChild(crossCard!)
         
-        maskCard = SKBalloonNode(imageNamed: "cana_card")
-        maskCard?.position = CGPoint(x: 600, y: 15)
+        maskCard = SKBalloonNode(imageNamed: "Teotihuacan")
+        maskCard?.position = CGPoint(x: 500, y: 20)
         maskCard?.zPosition = 2
         maskCard?.setScale(0.2)
         maskCard?.setHide(true)
         self.addChild(maskCard!)
         
-        olmecaCard = SKBalloonNode(imageNamed: "guaco_card")
-        olmecaCard?.position = CGPoint(x: 800, y: 15)
+        olmecaCard = SKBalloonNode(imageNamed: "Venta")
+        olmecaCard?.position = CGPoint(x: 700, y: 20)
         olmecaCard?.zPosition = 2
         olmecaCard?.setScale(0.2)
         olmecaCard?.setHide(true)
