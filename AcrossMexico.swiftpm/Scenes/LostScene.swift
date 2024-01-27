@@ -2,9 +2,8 @@
 //  File.swift
 //  
 //
-//  Created by Anne Victoria Batista Auzier on 18/04/23.
+//  Created by Bernardo de la Sierra on 27/01/23.
 //
-
 import Foundation
 import SpriteKit
 
@@ -51,6 +50,6 @@ class LostScene: SKScene {
         labelFinish.setScale(0.7)
         self.addChild(labelFinish)
         
-        labelFinish.text = "Unfortunately, you couldn't get the plants in time. \n\n\nBut I know you can do it next time!"
+        labelFinish.text = "Unfortunately, you couldn't get the objects in time. \n\n\nBut I know you can do it next time!"
     }
 }

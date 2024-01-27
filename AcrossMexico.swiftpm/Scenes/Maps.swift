@@ -9,15 +9,13 @@ import Foundation
 import SpriteKit
 
 extension GeneralScene {
-   
     func setupBackgroundParallax() {
         var calculateZPosition: CGFloat = 10
-        //paralax effect
         let backgroundOrder: [String] = [
-            "layer_1",
-            "layer_2",
-            "layer_3",
             "layer_4",
+            "layer_3",
+            "layer_2",
+            "layer_1",
         ]
 
         for layer in backgroundOrder {

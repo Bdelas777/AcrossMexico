@@ -199,42 +199,42 @@ class GeneralScene: SKScene {
         //===== Discover Image ====
         
         cannonCard = SKBalloonNode(imageNamed: "Veracruz")
-        cannonCard?.position = CGPoint(x: 1100 , y: 20)
+        cannonCard?.position = CGPoint(x: 1100 , y: 40)
         cannonCard?.zPosition = 2
         cannonCard?.setScale(0.2)
         cannonCard?.setHide(true)
         self.addChild(cannonCard!)
         
         vaseCard = SKBalloonNode(imageNamed: "Cantona")
-        vaseCard?.position = CGPoint(x: 900 , y: 20)
+        vaseCard?.position = CGPoint(x: 900 , y: 40)
         vaseCard?.zPosition = 2
         vaseCard?.setScale(0.2)
         vaseCard?.setHide(true)
         self.addChild(vaseCard!)
         
         sculptureCard = SKBalloonNode(imageNamed: "Monte")
-        sculptureCard?.position = CGPoint(x: 100 , y: 30)
+        sculptureCard?.position = CGPoint(x: 100 , y: 40)
         sculptureCard?.zPosition = 2
         sculptureCard?.setScale(0.2)
         sculptureCard?.setHide(true)
         self.addChild(sculptureCard!)
         
         crossCard = SKBalloonNode(imageNamed: "SanMiguel")
-        crossCard?.position = CGPoint(x: 300, y: 20)
+        crossCard?.position = CGPoint(x: 300, y: 40)
         crossCard?.zPosition = 2
         crossCard?.setScale(0.2)
         crossCard?.setHide(true)
         self.addChild(crossCard!)
         
         maskCard = SKBalloonNode(imageNamed: "Teotihuacan")
-        maskCard?.position = CGPoint(x: 500, y: 20)
+        maskCard?.position = CGPoint(x: 500, y: 40)
         maskCard?.zPosition = 2
         maskCard?.setScale(0.2)
         maskCard?.setHide(true)
         self.addChild(maskCard!)
         
         olmecaCard = SKBalloonNode(imageNamed: "Venta")
-        olmecaCard?.position = CGPoint(x: 700, y: 20)
+        olmecaCard?.position = CGPoint(x: 700, y: 40)
         olmecaCard?.zPosition = 2
         olmecaCard?.setScale(0.2)
         olmecaCard?.setHide(true)
