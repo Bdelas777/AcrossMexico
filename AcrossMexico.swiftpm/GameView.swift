@@ -22,7 +22,7 @@ struct GameView: View {
                 QuizCompletedView(gameManagerVM: gameManagerVM)
             } else {
                 VStack {
-                    ReusableText(text: "Animal Knowledge Quiz!", size: 30)
+                    ReusableText(text: "Mexico Quiz!", size: 30)
                         .padding()
                     
                     ReusableText(text: gameManagerVM.model.quizModel.question, size: 25)

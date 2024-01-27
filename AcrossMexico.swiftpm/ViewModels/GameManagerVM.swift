@@ -111,10 +111,10 @@ extension GameManagerVM
                                     QuizOption(id: 33,optionId: "C", option: "Monte Albán", color: Color.green),
                                     QuizOption(id: 34,optionId: "D", option: "Teotihuacan", color: Color.purple)]),
             
-            QuizModel(question: "What is a Zapotec city?",
-                      answer: "C",
-                      optionsList: [QuizOption(id: 31,optionId: "A", option: "Chetumal", color: Color.yellow),
-                                    QuizOption(id: 32,optionId: "B", option: "Monterrey", color: Color.red),
+            QuizModel(question: "It is a city that is not mentioned in the objects?",
+                      answer: "B",
+                      optionsList: [QuizOption(id: 31,optionId: "A", option: "La Venta", color: Color.yellow),
+                                    QuizOption(id: 32,optionId: "B", option: "Tenayuca", color: Color.red),
                                     QuizOption(id: 33,optionId: "C", option: "Monte Albán", color: Color.green),
                                     QuizOption(id: 34,optionId: "D", option: "Teotihuacan", color: Color.purple)])
             
