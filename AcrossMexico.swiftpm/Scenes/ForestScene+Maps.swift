@@ -2,7 +2,7 @@
 //  ForestScene+Maps.swift
 //  
 //
-//  Created by Anne Victoria Batista Auzier on 11/04/23.
+//  Created by Bernardo de la Sierra on 11/04/23.
 //
 
 import Foundation
