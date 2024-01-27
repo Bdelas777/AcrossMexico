@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GameView: View {
     @ObservedObject var gameManagerVM: GameManagerVM
-    @State private var showGameView = false
     var body: some View {
         ZStack {
             Image("bg")
@@ -22,8 +21,9 @@ struct GameView: View {
             if (gameManagerVM.model.quizCompleted) {
                 QuizCompletedView(gameManagerVM: gameManagerVM)
             } else {
+                
                 VStack {
-                    ReusableText(text: "Animal Knowledge Quiz!", size: 30)
+                    ReusableText(text: "Mexico Quiz!", size: 30)
                         .padding()
                     
                     ReusableText(text: gameManagerVM.model.quizModel.question, size: 25)
@@ -34,6 +34,7 @@ struct GameView: View {
                     Spacer()
                     
                     ZStack {
+                        
                         Circle()
                             .stroke(lineWidth: 15)
                             .foregroundColor(.gray)
@@ -61,5 +62,3 @@ struct GameView: View {
         }
     }
 }
-
-

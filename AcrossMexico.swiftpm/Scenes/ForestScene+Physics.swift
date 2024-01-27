@@ -1,5 +1,6 @@
 
 import SpriteKit
+import SwiftUI
 
 extension GeneralScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
@@ -298,15 +299,20 @@ extension GeneralScene: SKPhysicsContactDelegate {
             self.addChild(infoOlmecaButton!)
         }
         //Aqui eliminar el lab
-        if GeneralScene.shared.objectsCollected.count != 6 {
+        if GeneralScene.shared.objectsCollected.count == 6 {
             if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "lab_semfundo" || contact.bodyA.node?.name == "lab_semfundo" && contact.bodyB.node?.name == "intern" {
                 
                 self.infoOlmecaButton = SKButtonNode(imageNamed: "enter", clickAction: { [weak self] in
-                    let labScene = LabScene()
-                    labScene.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                    labScene.scaleMode = .aspectFill
-                    labScene.anchorPoint = .init(x: 0.5, y: 0.5)
-                    self!.view?.presentScene(labScene)
+                    // Transition to GameView when enter is pressed
+                    let gameView = GameView(gameManagerVM: GameManagerVM())
+                    let hostingController = UIHostingController(rootView: gameView)
+
+                    hostingController.modalPresentationStyle = .fullScreen // Set presentation style to fullscreen
+
+                    if let scene = self?.scene {
+                        scene.view?.window?.rootViewController?.present(hostingController, animated: true, completion: nil)
+                    }
+
                     self?.backgroundForestMusic.removeFromParent()
                 })
                 self.infoOlmecaButton?.position.y = 20
