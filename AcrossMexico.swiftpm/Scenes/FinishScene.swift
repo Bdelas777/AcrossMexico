@@ -1,8 +1,8 @@
 //
-//  File.swift
-//  
+//  FinishScene.swift
+//  AcrossMexico
 //
-//  Created by Anne Victoria Batista Auzier on 18/04/23.
+//  Created by Bernardo de la Sierra on 23/01/24.
 //
 
 import Foundation

@@ -1,3 +1,10 @@
+//
+//  InternNode.swift
+//  AcrossMexico
+//
+//  Created by Bernardo de la Sierra on 23/01/24.
+//
+
 import Foundation
 import SpriteKit
 

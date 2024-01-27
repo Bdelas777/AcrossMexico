@@ -1,4 +1,9 @@
-
+//
+//  Physics
+//  AcrossMexico
+//
+//  Created by Bernardo de la Sierra on 23/01/24.
+//
 import SpriteKit
 import SwiftUI
 
@@ -29,7 +34,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                     self!.pauseTime = false
                 })
                 self?.collectCannonButton?.position.x = 1240
-                self?.collectVaseButton?.position.y = -60
+                self?.collectCannonButton?.position.y = -60
                 self?.collectCannonButton?.setScale(0.25)
                 self?.addChild(self!.collectCannonButton!)
                 
@@ -53,6 +58,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
             self.cannonInfoButton?.setScale(0.23)
             self.addChild(cannonInfoButton!)
         }
+
         
         // Vase
         if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "Vase" || contact.bodyA.node?.name == "Vase" && contact.bodyB.node?.name == "intern" {

@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  ObjectsNode.swift
+//  AcrossMexico
 //
 //  Created by Bernardo de la Sierra on 23/01/24.
 //

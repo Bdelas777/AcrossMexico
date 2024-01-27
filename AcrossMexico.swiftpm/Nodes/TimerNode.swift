@@ -1,9 +1,10 @@
 //
 //  TimerNode.swift
-//  
+//  AcrossMexico
 //
-//  Created by Anne Victoria Batista Auzier on 13/04/23.
+//  Created by Bernardo de la Sierra on 23/01/24.
 //
+
 
 import Foundation
 import SpriteKit

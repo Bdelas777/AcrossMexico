@@ -1,8 +1,8 @@
 //
 //  QuizModel.swift
-//  ShoppingAppUI
+//  AcrossMexico
 //
-//  Created by richa.e.srivastava on 13/11/2021.
+//  Created by Bernardo dela Sierra on 26/01/2024.
 //
 
 import Foundation

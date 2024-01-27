@@ -1,8 +1,8 @@
 //
-//  File.swift
-//  
+//  LostScene
+//  AcrossMexico
 //
-//  Created by Bernardo de la Sierra on 27/01/23.
+//  Created by Bernardo de la Sierra on 23/01/24.
 //
 import Foundation
 import SpriteKit

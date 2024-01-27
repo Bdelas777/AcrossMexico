@@ -1,8 +1,8 @@
 //
 //  ArrayTexture.swift
-//  ForestCure
+//  AcrossMexico
 //
-//  Created by Anne Victoria Batista Auzier on 02/04/23.
+//  Created by Bernardo dela Sierra on 23/01/2024.
 //
 
 import Foundation

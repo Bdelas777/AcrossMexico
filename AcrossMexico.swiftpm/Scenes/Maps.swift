@@ -1,14 +1,17 @@
 //
-//  ForestScene+Maps.swift
-//  
+// Maps.swift
+//  AcrossMexico
 //
-//  Created by Bernardo de la Sierra on 11/04/23.
+//  Created by Bernardo de la Sierra on 23/01/24.
 //
 
 import Foundation
 import SpriteKit
 
+
 extension GeneralScene {
+    
+    // Es de lo que va enfrente asi atras
     func setupBackgroundParallax() {
         var calculateZPosition: CGFloat = 10
         let backgroundOrder: [String] = [
