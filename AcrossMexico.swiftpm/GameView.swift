@@ -53,7 +53,10 @@ struct GameView: View {
                             ReusableText(text: String(gameManagerVM.progress), size: 30)
                         }.frame(width: 150, height: 150)
                         .padding(.bottom, 50)
-
+                        
+                        
+                        
+                        
                         OptionsGridView(gameManagerVM: gameManagerVM)
                     
                 }

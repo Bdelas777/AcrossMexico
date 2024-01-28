@@ -27,7 +27,7 @@ class LostScene: SKScene {
         self.scaleMode = .aspectFill
         restart = SKButtonNode(imageNamed: "retry", clickAction: {[weak self] in
             let scene = GeneralScene()
-            scene.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            scene.size = CGSize(width: 1400, height: 1300)
             scene.scaleMode = .aspectFill
             scene.anchorPoint = .init(x: 0.5, y: 0.5)
             self?.view?.presentScene(scene)

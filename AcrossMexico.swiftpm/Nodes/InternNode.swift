@@ -57,10 +57,5 @@ class InternNode: SKNode {
         }
     }
     
-//    func jump() {
-//            spriteIntern.physicsBody?.applyImpulse(.init(dx: spriteIntern.size.width, dy: spriteIntern.size.height * 2))
-//    }
-    
-   
 }
 

@@ -167,6 +167,7 @@ class GeneralScene: SKScene {
         if self.timer?.minutes == 0 && self.timer?.seconds == 0 {
             let finishScene = LostScene()
             finishScene.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+         
             finishScene.scaleMode = .aspectFit
             finishScene.anchorPoint = .init(x: 0.5, y: 0.5)
             self.view?.presentScene(finishScene)
@@ -234,13 +235,13 @@ class GeneralScene: SKScene {
         self.addChild(maskCard!)
         
         olmecaCard = SKBalloonNode(imageNamed: "Venta")
-        olmecaCard?.position = CGPoint(x: 700, y: 40)
+        olmecaCard?.position = CGPoint(x: 700, y: 20)
         olmecaCard?.zPosition = 2
         olmecaCard?.setScale(0.2)
         olmecaCard?.setHide(true)
         self.addChild(olmecaCard!)
         
-        cientist = SKBalloonNode(imageNamed: "cientist3")
+        cientist = SKBalloonNode(imageNamed: "DialogoNaranja")
         cientist?.position = CGPoint(x: -4, y: 4)
         cientist?.zPosition = 4
         cientist?.setScale(0.8)
@@ -282,7 +283,7 @@ class GeneralScene: SKScene {
                 self?.nextTalkButton?.setHideButton(true)
                 self?.pauseTime = false
                 background.removeFromParent()
-                // self?.teste?.change(text: "")
+         
             } else {
                 self?.cientist?.change(text: (self?.introText[self?.indexText ?? 0])!)
             }

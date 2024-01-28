@@ -1,5 +1,5 @@
 //
-//  QuizCompletedView.swift
+//  QuizResultContainerView.swift
 //  AcrossMexico
 //
 //  Created by Bernardo dela Sierra on 26/01/2024.
@@ -7,48 +7,37 @@
 
 import Foundation
 import SwiftUI
+import SpriteKit
 
-struct QuizCompletedView: View {
+struct QuizCompletedView: UIViewControllerRepresentable {
     var gameManagerVM: GameManagerVM
-    var body: some View {
-        VStack {
-            Image(systemName: "gamecontroller.fill")
-                .foregroundColor(Color.yellow)
-                .font(.system(size: 60))
-                .padding()
-            
-            ReusableText(text: gameManagerVM.model.quizWinningStatus ?
-                         "THAT'S A WRAP" :
-                            "GAME OVER",
-                         size: 30)
-            .padding()
-            
-            ReusableText(text: gameManagerVM.model.quizWinningStatus
-                         ? "Thank you for playing!!"
-                         : "Better luck next time",
-                         size: 30)
-            .padding()
-            if !gameManagerVM.model.quizWinningStatus {
-                
-                Button {
-                    gameManagerVM.restartGame()
-                } label: {
-                    HStack {
-                        Image(systemName: "play.fill")
-                            .foregroundColor(.white)
-                            .font(.system(size: 24))
-                            .padding()
-                        
-                        Text("Play Again")
-                            .foregroundColor(.white)
-                            .font(.system(size: 24, weight: .bold, design: .rounded))
-                    }
-                }.frame(width: 300, height: 60, alignment: .center)
-                    .background(.purple.opacity(0.7))
-                    .cornerRadius(30)
-                    .padding()
-                
-            }
+
+    func makeUIViewController(context: Context) -> UIViewController {
+        let viewController = UIViewController()
+
+        // Configurar la vista de SpriteKit
+        let skView = SKView(frame: UIScreen.main.bounds)
+        viewController.view = skView
+
+        if gameManagerVM.model.quizWinningStatus {
+            let finishScene = FinishScene()
+            finishScene.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            finishScene.scaleMode = .aspectFill
+            finishScene.anchorPoint = .init(x: 0.5, y: 0.5)
+            skView.presentScene(finishScene)
+
+        } else {
+            let lostScene = LostScene()
+            lostScene.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            lostScene.scaleMode = .fill
+            lostScene.anchorPoint = .init(x: 0.5, y: 0.5)
+            skView.presentScene(lostScene)
         }
+
+        return viewController
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        // Puedes realizar actualizaciones adicionales aquí si es necesario
     }
 }

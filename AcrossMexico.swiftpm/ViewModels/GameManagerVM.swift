@@ -39,7 +39,7 @@ class GameManagerVM : ObservableObject {
                 model.quizModel.optionsList[index].isSelected = true
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    if (GameManagerVM.currentIndex < 3) {
+                    if (GameManagerVM.currentIndex < 2) {
                         GameManagerVM.currentIndex = GameManagerVM.currentIndex + 1
                         self.model = GameManagerVM.createGameModel(i: GameManagerVM.currentIndex)
                     } else {

@@ -311,6 +311,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                 self.infoOlmecaButton = SKButtonNode(imageNamed: "enter", clickAction: { [weak self] in
                     // Transition to GameView when enter is pressed
                     let gameView = GameView(gameManagerVM: GameManagerVM())
+                
                     let hostingController = UIHostingController(rootView: gameView)
 
                     hostingController.modalPresentationStyle = .fullScreen // Set presentation style to fullscreen
@@ -340,4 +341,5 @@ extension GeneralScene: SKPhysicsContactDelegate {
         self.vaseInfoButton?.removeFromParent()
     }
 }
+
 
