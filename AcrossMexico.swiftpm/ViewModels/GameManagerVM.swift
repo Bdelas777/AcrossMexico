@@ -39,7 +39,7 @@ class GameManagerVM : ObservableObject {
                 model.quizModel.optionsList[index].isSelected = true
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    if (GameManagerVM.currentIndex < 2) {
+                    if (GameManagerVM.currentIndex < 3) {
                         GameManagerVM.currentIndex = GameManagerVM.currentIndex + 1
                         self.model = GameManagerVM.createGameModel(i: GameManagerVM.currentIndex)
                     } else {
@@ -113,10 +113,10 @@ extension GameManagerVM
             
             QuizModel(question: "It is a city that is not mentioned in the objects?",
                       answer: "B",
-                      optionsList: [QuizOption(id: 31,optionId: "A", option: "La Venta", color: Color.yellow),
-                                    QuizOption(id: 32,optionId: "B", option: "Tenayuca", color: Color.red),
-                                    QuizOption(id: 33,optionId: "C", option: "Monte Albán", color: Color.green),
-                                    QuizOption(id: 34,optionId: "D", option: "Teotihuacan", color: Color.purple)])
+                      optionsList: [QuizOption(id: 41,optionId: "A", option: "La Venta", color: Color.yellow),
+                                    QuizOption(id: 42,optionId: "B", option: "Tenayuca", color: Color.red),
+                                    QuizOption(id: 43,optionId: "C", option: "Monte Albán", color: Color.green),
+                                    QuizOption(id: 44,optionId: "D", option: "Teotihuacan", color: Color.purple)])
             
         ]
     }
