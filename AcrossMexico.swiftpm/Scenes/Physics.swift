@@ -305,7 +305,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
             self.addChild(infoOlmecaButton!)
         }
         //Aqui eliminar el lab
-        if GeneralScene.shared.objectsCollected.count == 6 {
+        if GeneralScene.shared.objectsCollected.count != 0 {
             if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "lab_semfundo" || contact.bodyA.node?.name == "lab_semfundo" && contact.bodyB.node?.name == "intern" {
                 
                 self.infoOlmecaButton = SKButtonNode(imageNamed: "enter", clickAction: { [weak self] in
