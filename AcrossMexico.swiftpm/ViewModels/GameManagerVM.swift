@@ -21,7 +21,7 @@ class GameManagerVM : ObservableObject {
     
     
     var timer = Timer()
-    var maxProgress = 5
+    var maxProgress = 20
     @Published var progress = 0
     
     init() {

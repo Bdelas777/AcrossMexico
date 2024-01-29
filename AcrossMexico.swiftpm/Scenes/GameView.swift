@@ -66,5 +66,6 @@ struct GameView: View {
     func reset(){
         gameManagerVM.restartGame()
         gameManagerVM.reset()
+        gameManagerVM.start()
     }
 }
