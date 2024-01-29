@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 class GameManagerVM : ObservableObject {
+    @Published var showGameView = false
 
     static var currentIndex = 0
     
@@ -20,7 +21,7 @@ class GameManagerVM : ObservableObject {
     
     
     var timer = Timer()
-    var maxProgress = 15
+    var maxProgress = 5
     @Published var progress = 0
     
     init() {
@@ -39,7 +40,7 @@ class GameManagerVM : ObservableObject {
                 model.quizModel.optionsList[index].isSelected = true
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    if (GameManagerVM.currentIndex < 2) {
+                    if (GameManagerVM.currentIndex < 3) {
                         GameManagerVM.currentIndex = GameManagerVM.currentIndex + 1
                         self.model = GameManagerVM.createGameModel(i: GameManagerVM.currentIndex)
                     } else {
@@ -80,7 +81,10 @@ class GameManagerVM : ObservableObject {
     }
     
                                      
-                                     
+    func startQuiz() {
+            // Tu lógica para comenzar el quiz
+            showGameView = true
+        }
                                      
                                 
 

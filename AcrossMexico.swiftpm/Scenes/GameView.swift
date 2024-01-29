@@ -11,7 +11,7 @@ struct GameView: View {
     @ObservedObject var gameManagerVM: GameManagerVM
     var body: some View {
         ZStack {
-            Image("bg")
+            Image("FondoQuiz")
                 .resizable()
                 .aspectRatio(contentMode: ContentMode.fill)
                 .ignoresSafeArea()
@@ -62,5 +62,9 @@ struct GameView: View {
                 }
             }
         }
+    }
+    func reset(){
+        gameManagerVM.restartGame()
+        gameManagerVM.reset()
     }
 }

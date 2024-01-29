@@ -310,17 +310,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                 
                 self.infoOlmecaButton = SKButtonNode(imageNamed: "enter", clickAction: { [weak self] in
                     // Transition to GameView when enter is pressed
-                    let gameView = GameView(gameManagerVM: GameManagerVM())
-                
-                    let hostingController = UIHostingController(rootView: gameView)
-
-                    hostingController.modalPresentationStyle = .fullScreen // Set presentation style to fullscreen
-
-                    if let scene = self?.scene {
-                        scene.view?.window?.rootViewController?.present(hostingController, animated: true, completion: nil)
-                    }
-
-                    self?.backgroundForestMusic.removeFromParent()
+                    self?.presentGameView()
                 })
                 self.infoOlmecaButton?.position.y = 20
                 self.infoOlmecaButton?.position.x = -190
@@ -340,6 +330,35 @@ extension GeneralScene: SKPhysicsContactDelegate {
         self.cannonInfoButton?.removeFromParent()
         self.vaseInfoButton?.removeFromParent()
     }
+    // Función para presentar GameView desde el controlador de vista actual
+    func presentGameView() {
+        // Liberar recursos de la presentación anterior si es necesario
+        self.backgroundForestMusic.removeFromParent()
+
+        // Verificar si ya hay una instancia de GameView presente
+        if let existingGameView = UIApplication.shared.windows.first?.rootViewController?.presentedViewController as? UIHostingController<GameView> {
+            // Reutilizar la instancia existente
+            existingGameView.rootView.reset()  // Asumiendo que tienes un método para reiniciar el juego
+        } else {
+            // Crear una nueva instancia de GameView
+            let gameView = GameView(gameManagerVM: GameManagerVM())
+            let hostingController = UIHostingController(rootView: gameView)
+            hostingController.modalPresentationStyle = .fullScreen
+
+            // Asegúrate de estar en el hilo principal
+            DispatchQueue.main.async {
+                // Verificar si hay un controlador de vista actual y cerrar presentaciones modales anteriores
+                if let currentViewController = UIApplication.shared.windows.first?.rootViewController {
+                    currentViewController.dismiss(animated: true, completion: {
+                        // Presentar el nuevo GameView después de cerrar presentaciones modales anteriores
+                        currentViewController.present(hostingController, animated: true, completion: nil)
+                    })
+                }
+            }
+        }
+    }
+
+
 }
 
 
