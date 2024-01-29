@@ -336,7 +336,10 @@ extension GeneralScene: SKPhysicsContactDelegate {
         self.backgroundForestMusic.removeFromParent()
 
         // Verificar si ya hay una instancia de GameView presente
-        if let existingGameView = UIApplication.shared.windows.first?.rootViewController?.presentedViewController as? UIHostingController<GameView> {
+        if let currentWindow = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first?.windows.first,
+            let existingGameView = currentWindow.rootViewController?.presentedViewController as? UIHostingController<GameView> {
             // Reutilizar la instancia existente
             existingGameView.rootView.reset()  // Asumiendo que tienes un método para reiniciar el juego
         } else {
@@ -348,7 +351,11 @@ extension GeneralScene: SKPhysicsContactDelegate {
             // Asegúrate de estar en el hilo principal
             DispatchQueue.main.async {
                 // Verificar si hay un controlador de vista actual y cerrar presentaciones modales anteriores
-                if let currentViewController = UIApplication.shared.windows.first?.rootViewController {
+                if let currentWindow = UIApplication.shared.connectedScenes
+                    .compactMap({ $0 as? UIWindowScene })
+                    .first?.windows.first,
+                    let currentViewController = currentWindow.rootViewController {
+                    
                     currentViewController.dismiss(animated: true, completion: {
                         // Presentar el nuevo GameView después de cerrar presentaciones modales anteriores
                         currentViewController.present(hostingController, animated: true, completion: nil)
@@ -357,7 +364,6 @@ extension GeneralScene: SKPhysicsContactDelegate {
             }
         }
     }
-
 
 }
 

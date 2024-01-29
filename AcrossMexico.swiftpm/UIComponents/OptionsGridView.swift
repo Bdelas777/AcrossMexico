@@ -11,7 +11,7 @@ import SwiftUI
 
 struct OptionsGridView: View {
     var gameManagerVM: GameManagerVM
-    var columns: [GridItem] = Array(repeating: GridItem(.fixed(170), spacing: 0), count: 2)
+    var columns: [GridItem] = Array(repeating: GridItem(.fixed(170), spacing: 200), count: 2)
     var body: some View {
         
         LazyVGrid(columns: columns, spacing: 20) {
@@ -39,7 +39,7 @@ struct OptionCardView : View {
             } else {
                 OptionView(quizOption: quizOption)
             }
-        }.frame(width: 150, height: 150)
+        }.frame(width: 300, height: 150)
             .background(setBackgroundColor())
             .cornerRadius(40)
     }
@@ -50,7 +50,7 @@ struct OptionCardView : View {
         } else if (!(quizOption.isMatched) && (quizOption.isSelected)) {
             return Color.red
         } else {
-            return Color.white
+            return Color(red:203/255, green: 160/255, blue: 104/255)
         }
     }
 }
