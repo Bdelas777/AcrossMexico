@@ -18,7 +18,7 @@ class GeneralScene: SKScene {
     var sculptureNode: SculptureNode?
     var crossNode: CrossNode?
     var maskNode: MaskNode?
-    var labNode: LabNode?
+    var pyramidNode: PyramidNode?
     var vaseNode: VaseNode?
     var cannonNode: CannonNode?
     var timer: TimerNode?
@@ -71,18 +71,81 @@ class GeneralScene: SKScene {
     
     
     // Text Intro
+    // Text Intro
     var introText: [String] = [
-        "Hola soy Bernardo y sere tu guia por el juego, ",
-        "Para conoer lo que hay en las diversas ciudades en las que vive.",
-        "No? Okay, let me explain. Medicinal plants are plants that \n\nhave pharmacological action, in other words, they help \n\nin the cure or treatment of several diseases.",
-        "And here in the Amazon region it is quite common to use \n\nthe benefits of these plants to cure illnesses.",
-        "Thanks to my intense study in the indigenous communities, \n\nI have learned a lot about how much these plants can \n\noffer us if we use them in the right way.",
-        "I learned so much that I built a laboratory where I test and \n\nprepare natural remedies using medicinal plants!",
-        "However, I am no longer as willing as before and need your \n\nhelp to get the plants and prepare the medicines.",
-        "Lately, there have been many respiratory diseases due to \n\nthe constant burning in the region, so I need you to help \n\nme work on a remedy urgently!",
-        "Please, pay attention when choosing the plants, because \n\nyour task is collect the plant that has properties that \n\nhelp to treat these diseases as quickly as possible.",
-        "Go in search of the plant and then take it to the lab!"
+        """
+        My name is Alex, I'm an archeologist on a quest\n\n
+        to explore the rich historical sites scattered\n\n
+        throughout Mexico.
+        """,
+        """
+        I'm genuinely thrilled to have you here \n\n
+        ready to join me in uncovering valuable \n\n
+        archaeological artifacts!
+        """,
+        """
+        But before we embark on this exciting\n\n
+        archaeological adventure, let me ask if you're\n\n
+        familiar with the artifacts we're seeking.
+        """,
+        """
+        No? Not to worry, let me provide you with \n\n
+        a quick overview.
+        """,
+        """
+        We're on the lookout for significant\n\n
+        historical objects that hold cultural \n\n
+        and archaeological importance.
+        """,
+        """
+        Here in Mexico, our vibrant history is encapsulated \n\n
+        in these artifacts, and your assistance in locating \n\n
+        and identifying them is of utmost importance.
+        """,
+        """
+        Thanks to my research and studies within various\n\n
+        archaeological sites. \n\n
+        """,
+        """
+        I've gathered a wealth of knowledge about the \n\n
+        historical significance of these objects.
+        """,
+        """
+        I've even set up a dedicated workspace where \n\n
+        we can carefully examine and document these \n\n
+        artifacts once  you've discovered them!
+        """,
+        """
+        However, my energy is not as boundless \n\n
+        as it once was, and I'm in need of your help \n\n
+        to unearth these artifacts. \n\n
+        """,
+        """
+        Your task is to navigate through the \n\n
+        archaeological sites, paying close attention\n\n
+        to the details,
+        """,
+        """
+        and collecting the objects that hold\n\n
+        historical importance.
+        """,
+        """
+        At the end of our quest, there will be a\n\n
+        quiz to ensure we've gathered the correct\n\n
+        artifacts.
+        """,
+        """
+        So, let's embark on this archaeological\n\n
+        journey together!
+        """,
+        """
+        Explore the sites, find the artifacts, and \n\n
+        bring them back to our workspace for further \n\n
+        examination!
+        """
     ]
+
+ 
     
     override func sceneDidLoad() {
         internNode = InternNode()
@@ -100,7 +163,7 @@ class GeneralScene: SKScene {
         vaseNode = VaseNode()
         vaseNode?.name = "Vase"
         vaseNode?.zPosition = -1
-        vaseNode?.position.y = -75
+        vaseNode?.position.y = -80
         vaseNode?.position.x = 1000
         self.addChild(vaseNode!)
         
@@ -121,23 +184,23 @@ class GeneralScene: SKScene {
         maskNode = MaskNode()
         maskNode?.name = "Mask"
         maskNode?.zPosition = -1
-        maskNode?.position.y = -75
+        maskNode?.position.y = -85
         maskNode?.position.x = 600
         self.addChild(maskNode!)
         
         olmecaNode = OlmecaNode()
         olmecaNode?.name = "Olmeca"
         olmecaNode?.zPosition = -1
-        olmecaNode?.position.y = -72
+        olmecaNode?.position.y = -85
         olmecaNode?.position.x = 800
         self.addChild(olmecaNode!)
         
-        labNode = LabNode()
-        labNode?.name = "lab_semfundo"
-        labNode?.zPosition = -1
-        labNode?.position.y = -55
-        labNode?.position.x = -190
-        self.addChild(labNode!)
+        pyramidNode = PyramidNode()
+        pyramidNode?.name = "Piramide"
+        pyramidNode?.zPosition = -1
+        pyramidNode?.position.y = -65
+        pyramidNode?.position.x = -190
+        self.addChild(pyramidNode!)
         
         setupBackgroundParallax()
         backgroundGeneralSound()
@@ -235,19 +298,19 @@ class GeneralScene: SKScene {
         self.addChild(maskCard!)
         
         olmecaCard = SKBalloonNode(imageNamed: "Venta")
-        olmecaCard?.position = CGPoint(x: 700, y: 20)
+        olmecaCard?.position = CGPoint(x: 700, y: 40)
         olmecaCard?.zPosition = 2
         olmecaCard?.setScale(0.2)
         olmecaCard?.setHide(true)
         self.addChild(olmecaCard!)
         
         cientist = SKBalloonNode(imageNamed: "DialogoNaranja")
-        cientist?.position = CGPoint(x: -4, y: 4)
+        cientist?.position = CGPoint(x: -6, y: 4)
         cientist?.zPosition = 4
         cientist?.setScale(0.8)
         self.pauseTime = true
         cientist?.setHide(false)
-        cientist?.change(text: "Hello, trainee! Welcome to my Institute!")
+        cientist?.change(text: "Welcome to the treasure hunt in Mexico!")
         self.addChild(cientist!)
         
         // ======== Controls =========

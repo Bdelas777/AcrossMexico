@@ -15,14 +15,13 @@ class FinishScene: SKScene {
     override func sceneDidLoad() {
         super.sceneDidLoad()
         
-        let backgroundFinish = SKSpriteNode(imageNamed: "congrads")
+        let backgroundFinish = SKSpriteNode(imageNamed: "WinScreen")
         backgroundFinish.texture?.filteringMode = .nearest
         backgroundFinish.zPosition = -10
         backgroundFinish.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         backgroundFinish.scene?.scaleMode = .aspectFill
         self.addChild(backgroundFinish)
-        
-        text()
+      
         
         backgroundFinishSound()
 
@@ -30,25 +29,7 @@ class FinishScene: SKScene {
     override func didMove(to view: SKView) {
         self.scaleMode = .aspectFill
     }
-    
-    func text(){
-        let labelFinish: SKLabelNode = SKLabelNode(text: "")
-        labelFinish.verticalAlignmentMode = .center
-        labelFinish.fontName = "PixelOperator8"
-        labelFinish.fontColor = .white
-        labelFinish.fontSize = 14
-        labelFinish.position = CGPoint(x: -110, y: -50)
-        labelFinish.numberOfLines = 0
-        labelFinish.zPosition += 5
-        labelFinish.setScale(0.7)
-        
-        self.addChild(labelFinish)
-       
-    
-            labelFinish.position = CGPoint(x: -115, y: -50)
-            labelFinish.text = "Congratulations! You have succeeded in visited all the cities \n\n\nA simple natural remedy that can help treat many people, \n\nusing medicinal plants, whose recognition in many regions of \n\nBrazil was due to indigenous knowledge that was passed from \n\ngeneration to generation. I hope that this experience has made \n\nyou value this ancient knowledge and realize the power \n\nof nature to heal our bodies and minds."
-        
-    }
+  
     
     func backgroundFinishSound() {
         backgroundFinishMusic.run(SKAction.changeVolume(to: Float(0.6), duration: 0))

@@ -8,11 +8,11 @@
 import Foundation
 import SpriteKit
 
-class LabNode: SKNode {
+class PyramidNode: SKNode {
     var spriteLab: SKSpriteNode
     
     override init() {
-        spriteLab = SKSpriteNode(imageNamed: "lab_semfundo")
+        spriteLab = SKSpriteNode(imageNamed: "Piramide")
         super.init()
         
         let physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: spriteLab.size.width, height: spriteLab.size.height))

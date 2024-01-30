@@ -13,13 +13,13 @@ extension GeneralScene: SKPhysicsContactDelegate {
         // Cannon
         if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "Cannon" || contact.bodyA.node?.name == "Cannon" && contact.bodyB.node?.name == "intern" {
             
-            self.cannonInfoButton = SKButtonNode(imageNamed: "learnMore", clickAction: { [weak self] in
+            self.cannonInfoButton = SKButtonNode(imageNamed: "LearnMoreButton", clickAction: { [weak self] in
                 
                 self?.cannonCard?.setHide(false)
                 self?.cannonInfoButton?.removeFromParent()
                 self?.pauseTime = true
                 
-                self?.collectCannonButton = SKButtonNode(imageNamed: "pickUp", clickAction: {[weak self] in
+                self?.collectCannonButton = SKButtonNode(imageNamed: "PickUpButton", clickAction: {[weak self] in
                     self?.cannonCard?.setHide(true)
                     self?.cannonNode?.removeFromParent()
                     self?.collectCannonButton?.removeFromParent()
@@ -38,7 +38,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                 self?.collectCannonButton?.setScale(0.25)
                 self?.addChild(self!.collectCannonButton!)
                 
-                self?.cancelCannonButton = SKButtonNode(imageNamed: "leave", clickAction: {[weak self] in
+                self?.cancelCannonButton = SKButtonNode(imageNamed: "LeaveButton", clickAction: {[weak self] in
                     self?.cannonCard?.setHide(true)
                     self?.cancelCannonButton?.removeFromParent()
                     self?.collectCannonButton?.removeFromParent()
@@ -63,13 +63,13 @@ extension GeneralScene: SKPhysicsContactDelegate {
         // Vase
         if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "Vase" || contact.bodyA.node?.name == "Vase" && contact.bodyB.node?.name == "intern" {
             
-            self.vaseInfoButton = SKButtonNode(imageNamed: "learnMore", clickAction: { [weak self] in
+            self.vaseInfoButton = SKButtonNode(imageNamed: "LearnMoreButton", clickAction: { [weak self] in
                 
                 self?.vaseCard?.setHide(false)
                 self?.vaseInfoButton?.removeFromParent()
                 self?.pauseTime = true
                 
-                self?.collectVaseButton = SKButtonNode(imageNamed: "pickUp", clickAction: {[weak self] in
+                self?.collectVaseButton = SKButtonNode(imageNamed: "PickUpButton", clickAction: {[weak self] in
                     self?.vaseCard?.setHide(true)
                     self?.vaseNode?.removeFromParent()
                     self?.collectVaseButton?.removeFromParent()
@@ -88,7 +88,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                 self?.collectVaseButton?.setScale(0.25)
                 self?.addChild(self!.collectVaseButton!)
                 
-                self?.cancelVaseButton = SKButtonNode(imageNamed: "leave", clickAction: {[weak self] in
+                self?.cancelVaseButton = SKButtonNode(imageNamed: "LeaveButton", clickAction: {[weak self] in
                     self?.vaseCard?.setHide(true)
                     self?.cancelVaseButton?.removeFromParent()
                     self?.collectVaseButton?.removeFromParent()
@@ -112,13 +112,13 @@ extension GeneralScene: SKPhysicsContactDelegate {
         // Sculpture
         if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "Sculpture" || contact.bodyA.node?.name == "Sculpture" && contact.bodyB.node?.name == "intern" {
             
-            self.sculptureInfoButton = SKButtonNode(imageNamed: "learnMore", clickAction: { [weak self] in
+            self.sculptureInfoButton = SKButtonNode(imageNamed: "LearnMoreButton", clickAction: { [weak self] in
                 
                 self?.sculptureCard?.setHide(false)
                 self?.sculptureInfoButton?.removeFromParent()
                 self?.pauseTime = true
                 
-                self?.collectSculptureButton = SKButtonNode(imageNamed: "pickUp", clickAction: {[weak self] in
+                self?.collectSculptureButton = SKButtonNode(imageNamed: "PickUpButton", clickAction: {[weak self] in
                     self?.sculptureCard?.setHide(true)
                     self?.sculptureNode?.removeFromParent()
                     self?.collectSculptureButton?.removeFromParent()
@@ -137,7 +137,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                 self?.collectSculptureButton?.setScale(0.25)
                 self?.addChild(self!.collectSculptureButton!)
                 
-                self?.cancelSculptureButton = SKButtonNode(imageNamed: "leave", clickAction: {[weak self] in
+                self?.cancelSculptureButton = SKButtonNode(imageNamed: "LeaveButton", clickAction: {[weak self] in
                     self?.sculptureCard?.setHide(true)
                     self?.cancelSculptureButton?.removeFromParent()
                     self?.collectSculptureButton?.removeFromParent()
@@ -161,13 +161,13 @@ extension GeneralScene: SKPhysicsContactDelegate {
         // Cross
         if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "Cross" || contact.bodyA.node?.name == "Cross" && contact.bodyB.node?.name == "intern" {
             
-            self.crossInfoButton = SKButtonNode(imageNamed: "learnMore", clickAction: { [weak self] in
+            self.crossInfoButton = SKButtonNode(imageNamed: "LearnMoreButton", clickAction: { [weak self] in
                 
                 self?.crossCard?.setHide(false)
                 self?.crossInfoButton?.removeFromParent()
                 self?.pauseTime = true
                 
-                self?.collectCrossButton = SKButtonNode(imageNamed: "pickUp", clickAction: {[weak self] in
+                self?.collectCrossButton = SKButtonNode(imageNamed: "PickUpButton", clickAction: {[weak self] in
                     self?.crossCard?.setHide(true)
                     self?.crossNode?.removeFromParent()
                     self?.collectCrossButton?.removeFromParent()
@@ -185,7 +185,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                 self?.collectCrossButton?.setScale(0.25)
                 self?.addChild(self!.collectCrossButton!)
                 
-                self?.cancelCrossButton = SKButtonNode(imageNamed: "leave", clickAction: {[weak self] in
+                self?.cancelCrossButton = SKButtonNode(imageNamed: "LeaveButton", clickAction: {[weak self] in
                     self?.crossCard?.setHide(true)
                     self?.cancelCrossButton?.removeFromParent()
                     self?.collectCrossButton?.removeFromParent()
@@ -210,13 +210,13 @@ extension GeneralScene: SKPhysicsContactDelegate {
         
         if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "Mask" || contact.bodyA.node?.name == "Mask" && contact.bodyB.node?.name == "intern" {
             
-            self.maskInfoButton = SKButtonNode(imageNamed: "learnMore", clickAction: { [weak self] in
+            self.maskInfoButton = SKButtonNode(imageNamed: "LearnMoreButton", clickAction: { [weak self] in
                 
                 self?.maskCard?.setHide(false)
                 self?.maskInfoButton?.removeFromParent()
                 self?.pauseTime = true
                 
-                self?.collectMaskButton = SKButtonNode(imageNamed: "pickUp", clickAction: {[weak self] in
+                self?.collectMaskButton = SKButtonNode(imageNamed: "PickUpButton", clickAction: {[weak self] in
                     self?.maskCard?.setHide(true)
                     self?.maskNode?.removeFromParent()
                     self?.collectMaskButton?.removeFromParent()
@@ -234,7 +234,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                 self?.collectMaskButton?.setScale(0.25)
                 self?.addChild(self!.collectMaskButton!)
                 
-                self?.cancelMaskButton = SKButtonNode(imageNamed: "leave", clickAction: {[weak self] in
+                self?.cancelMaskButton = SKButtonNode(imageNamed: "LeaveButton", clickAction: {[weak self] in
                     self?.maskCard?.setHide(true)
                     self?.cancelMaskButton?.removeFromParent()
                     self?.collectMaskButton?.removeFromParent()
@@ -259,13 +259,13 @@ extension GeneralScene: SKPhysicsContactDelegate {
         
         if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "Olmeca" || contact.bodyA.node?.name == "Olmeca" && contact.bodyB.node?.name == "intern" {
             
-            self.infoOlmecaButton = SKButtonNode(imageNamed: "learnMore", clickAction: { [weak self] in
+            self.infoOlmecaButton = SKButtonNode(imageNamed: "LearnMoreButton", clickAction: { [weak self] in
                 
                 self?.olmecaCard?.setHide(false)
                 self?.infoOlmecaButton?.removeFromParent()
                 self?.pauseTime = true
                 
-                self?.collectOlmecaButton = SKButtonNode(imageNamed: "pickUp", clickAction: { [weak self] in
+                self?.collectOlmecaButton = SKButtonNode(imageNamed: "PickUpButton", clickAction: { [weak self] in
                     self?.olmecaCard?.setHide(true)
                     self?.olmecaNode?.removeFromParent()
                     self?.collectOlmecaButton?.removeFromParent()
@@ -283,7 +283,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                 self?.collectOlmecaButton?.setScale(0.25)
                 self?.addChild(self!.collectOlmecaButton!)
                 
-                self?.cancelOlmecaButton = SKButtonNode(imageNamed: "leave", clickAction: {[weak self] in
+                self?.cancelOlmecaButton = SKButtonNode(imageNamed: "LeaveButton", clickAction: {[weak self] in
                     self?.olmecaCard?.setHide(true)
                     self?.cancelOlmecaButton?.removeFromParent()
                     self?.collectOlmecaButton?.removeFromParent()
@@ -306,7 +306,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
         }
         //Aqui eliminar el lab
         if GeneralScene.shared.objectsCollected.count != 0 {
-            if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "lab_semfundo" || contact.bodyA.node?.name == "lab_semfundo" && contact.bodyB.node?.name == "intern" {
+            if contact.bodyA.node?.name == "intern" && contact.bodyB.node?.name == "Piramide" || contact.bodyA.node?.name == "Piramide" && contact.bodyB.node?.name == "intern" {
                 
                 self.infoOlmecaButton = SKButtonNode(imageNamed: "enter", clickAction: { [weak self] in
                     // Transition to GameView when enter is pressed

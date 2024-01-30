@@ -82,7 +82,7 @@ class GameManagerVM : ObservableObject {
     
                                      
     func startQuiz() {
-            // Tu lógica para comenzar el quiz
+
             showGameView = true
         }
                                      

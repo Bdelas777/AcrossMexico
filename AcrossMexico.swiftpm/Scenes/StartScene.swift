@@ -23,13 +23,13 @@ class StartScene: SKScene {
         
         startInitialSceneSound()
         
-        startButton = SKButtonNode(imageNamed: "playButton", clickAction: {[weak self] in
+        startButton = SKButtonNode(imageNamed: "PlayButton", clickAction: {[weak self] in
             let startScene = GeneralScene(size: self!.size)
             startScene.scaleMode = self!.scaleMode
             self!.view?.presentScene(startScene)
             self?.startInitialSceneMusic.removeFromParent()
         })
-        startButton?.position.x = -180
+        startButton?.position.x = 0
         startButton?.position.y = -20
         startButton?.setScale(1.2)
         self.addChild(startButton!)
