@@ -314,7 +314,7 @@ class GeneralScene: SKScene {
         self.addChild(cientist!)
         
         // ======== Controls =========
-        leftButton = SKButtonNode(imageNamed: "left1", clickAction: { [weak self] in
+        leftButton = SKButtonNode(imageNamed: "RedLeftArrow", clickAction: { [weak self] in
             self?.direction = -1
             self?.internNode?.playAnim(state: .walk)
         }, unclickAction: { [weak self] in
@@ -326,7 +326,7 @@ class GeneralScene: SKScene {
         leftButton?.zPosition = 2
         self.camera?.addChild(leftButton!)
         
-        rightButton = SKButtonNode(imageNamed: "right1", clickAction: { [weak self] in
+        rightButton = SKButtonNode(imageNamed: "RedRightArrow", clickAction: { [weak self] in
             self?.direction = 1
             self?.internNode?.playAnim(state: .walk)
         }, unclickAction: { [weak self] in
@@ -338,7 +338,7 @@ class GeneralScene: SKScene {
         rightButton?.zPosition = 2
         self.camera?.addChild(rightButton!)
         
-        nextTalkButton = SKButtonNode(imageNamed: "right2", clickAction: { [weak self] in
+        nextTalkButton = SKButtonNode(imageNamed: "PurpleRightArrow", clickAction: { [weak self] in
             self?.indexText += 1
             
             if(self!.indexText >= self!.introText.count) {
