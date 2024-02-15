@@ -1,3 +1,10 @@
+//
+//  ContentView
+//  AcrossMexico
+//
+//  Created by Bernardo de la Sierra on 23/01/24.
+//
+
 import SwiftUI
 import SpriteKit
 
