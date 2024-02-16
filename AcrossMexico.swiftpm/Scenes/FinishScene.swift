@@ -7,9 +7,10 @@
 
 import Foundation
 import SpriteKit
+import RealityKit
 
 class FinishScene: SKScene {
-    
+    var gift: SKButtonNode?
     var backgroundFinishMusic = SKAudioNode(fileNamed: "forestSound.mp3")
     
     override func sceneDidLoad() {
@@ -26,10 +27,34 @@ class FinishScene: SKScene {
         backgroundFinishSound()
 
     }
+    
     override func didMove(to view: SKView) {
         self.scaleMode = .aspectFill
+
+        gift = SKButtonNode(imageNamed: "RetryButton", clickAction: { [weak self] in
+            self?.restartGame()
+        })
+        gift?.position = CGPoint(x: 0, y: -70)
+        gift?.setScale(0.6)
+        self.addChild(gift!)
     }
-  
+
+    func restartGame() {
+ 
+        
+        let realityVC = RealityScene()
+        
+        // Use DispatchQueue to present the view controller after the view hierarchy is set up
+        DispatchQueue.main.async {
+            if let viewController = self.view?.window?.rootViewController {
+                viewController.present(realityVC, animated: true, completion: nil)
+            }
+        }
+        
+        
+    }
+
+    
     
     func backgroundFinishSound() {
         backgroundFinishMusic.run(SKAction.changeVolume(to: Float(0.6), duration: 0))
