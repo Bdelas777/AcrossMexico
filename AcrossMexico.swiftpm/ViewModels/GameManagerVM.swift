@@ -8,8 +8,10 @@
 import Foundation
 import SwiftUI
 
-class GameManagerVM : ObservableObject {
+class GameManagerVM : ObservableObject ,FinishSceneDelegate {
     @Published var showGameView = false
+    weak var finishSceneDelegate: FinishSceneDelegate?
+
 
     static var currentIndex = 0
     
@@ -86,7 +88,15 @@ class GameManagerVM : ObservableObject {
             showGameView = true
         }
                                      
-                                
+  
+
+       
+
+    func didFinishSceneRestart() {
+           // Notificar al delegado que se reinició la escena
+           finishSceneDelegate?.didFinishSceneRestart()
+       }
+
 
 }
 
