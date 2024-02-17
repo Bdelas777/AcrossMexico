@@ -71,7 +71,6 @@ class GeneralScene: SKScene {
     
     
     // Text Intro
-    // Text Intro
     var introText: [String] = [
         """
         My name is Alex, I'm an archeologist on a quest\n\n
@@ -144,8 +143,6 @@ class GeneralScene: SKScene {
         examination!
         """
     ]
-
- 
     
     override func sceneDidLoad() {
         internNode = InternNode()
@@ -263,7 +260,7 @@ class GeneralScene: SKScene {
         //===== Discover Image ====
         
         cannonCard = SKBalloonNode(imageNamed: "Veracruz")
-        cannonCard?.position = CGPoint(x: 1100 , y: 40)
+        cannonCard?.position = CGPoint(x: 1000 , y: 40)
         cannonCard?.zPosition = 2
         cannonCard?.setScale(0.2)
         cannonCard?.setHide(true)

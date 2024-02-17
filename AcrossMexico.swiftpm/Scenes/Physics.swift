@@ -47,7 +47,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                     self?.cancelPlantsMusic.removeFromParent()
                     self?.pauseTime = false
                 })
-                self?.cancelCannonButton?.position.x = 1160
+                self?.cancelCannonButton?.position.x = 1120
                 self?.cancelCannonButton?.position.y = -60
                 self?.cancelCannonButton?.setScale(0.25)
                 self?.addChild(self!.cancelCannonButton!)
@@ -97,7 +97,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                     self?.cancelPlantsMusic.removeFromParent()
                     self?.pauseTime = false
                 })
-                self?.cancelVaseButton?.position.x = 960
+                self?.cancelVaseButton?.position.x = 920
                 self?.cancelVaseButton?.position.y = -60
                 self?.cancelVaseButton?.setScale(0.25)
                 self?.addChild(self!.cancelVaseButton!)
@@ -146,7 +146,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                     self?.cancelPlantsMusic.removeFromParent()
                     self?.pauseTime = false
                 })
-                self?.cancelSculptureButton?.position.x = 160
+                self?.cancelSculptureButton?.position.x = 120
                 self?.cancelSculptureButton?.position.y = -60
                 self?.cancelSculptureButton?.setScale(0.25)
                 self?.addChild(self!.cancelSculptureButton!)
@@ -195,7 +195,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                     self?.cancelPlantsMusic.removeFromParent()
                     self?.pauseTime = false
                 })
-                self?.cancelCrossButton?.position.x = 360
+                self?.cancelCrossButton?.position.x = 320
                 self?.cancelCrossButton?.position.y = -60
                 self?.cancelCrossButton?.setScale(0.25)
                 self?.addChild(self!.cancelCrossButton!)
@@ -244,7 +244,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                     self?.cancelPlantsMusic.removeFromParent()
                     self?.pauseTime = false
                 })
-                self?.cancelMaskButton?.position.x = 560
+                self?.cancelMaskButton?.position.x = 520
                 self?.cancelMaskButton?.position.y = -60
                 self?.cancelMaskButton?.setScale(0.25)
                 self?.addChild(self!.cancelMaskButton!)
@@ -292,7 +292,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                     self?.cancelPlantsMusic.removeFromParent()
                     self?.pauseTime = false
                 })
-                self?.cancelOlmecaButton?.position.x = 760
+                self?.cancelOlmecaButton?.position.x = 720
                 self?.cancelOlmecaButton?.position.y = -60
                 self?.cancelOlmecaButton?.setScale(0.25)
                 self?.addChild(self!.cancelOlmecaButton!)
@@ -314,7 +314,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                 })
                 self.infoOlmecaButton?.position.y = 20
                 self.infoOlmecaButton?.position.x = -190
-                self.infoOlmecaButton?.setScale(0.23)
+                self.infoOlmecaButton?.setScale(0.53)
                 self.addChild(infoOlmecaButton!)
             }
         }

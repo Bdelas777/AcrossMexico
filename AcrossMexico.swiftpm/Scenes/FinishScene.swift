@@ -36,7 +36,7 @@ class FinishScene: SKScene {
             self.scaleMode = .aspectFill
             
             // Crear y configurar el botón de retry
-            gift = SKButtonNode(imageNamed: "RetryButton", clickAction: { [weak self] in
+            gift = SKButtonNode(imageNamed: "gift", clickAction: { [weak self] in
                 self?.navigateToRealityScene()
             })
             gift?.position = CGPoint(x: 0, y: -70)

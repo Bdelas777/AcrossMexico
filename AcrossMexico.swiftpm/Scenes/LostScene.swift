@@ -30,7 +30,7 @@ class LostScene: SKScene {
             self?.restartGame()
         })
         restart?.position = CGPoint(x: 0, y: -70)
-        restart?.setScale(0.6)
+        restart?.setScale(1)
         self.addChild(restart!)
     }
 

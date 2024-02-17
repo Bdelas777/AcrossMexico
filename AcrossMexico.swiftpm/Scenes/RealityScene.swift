@@ -19,11 +19,19 @@ class RealityScene: UIViewController {
         // Cargar el modelo
         do {
             let modelEntity = try Entity.loadModel(named: "Cantona.usdz")
-
+            let modelEntity2 = try Entity.loadModel(named: "Veracruz.usdz")
+            let modelEntity3 = try Entity.loadModel(named: "Teotihuacan.usdz")
+            let modelEntity4 = try Entity.loadModel(named: "SanMiguelDeAllende.usdz")
+            let modelEntity5 = try Entity.loadModel(named: "MonteAlban.usdz")
+            let modelEntity6 = try Entity.loadModel(named: "LaVenta.usdz")
             // Crear un ancla y agregar el modelo a ese ancla
             let anchor = AnchorEntity()
             anchor.addChild(modelEntity)
-
+            anchor.addChild(modelEntity2)
+            anchor.addChild(modelEntity3)
+            anchor.addChild(modelEntity4)
+            anchor.addChild(modelEntity5)
+            anchor.addChild(modelEntity6)
             // Agregar el ancla a la escena AR
             arView.scene.anchors.append(anchor)
         } catch {

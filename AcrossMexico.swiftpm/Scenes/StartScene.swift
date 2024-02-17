@@ -31,7 +31,7 @@ class StartScene: SKScene {
         })
         startButton?.position.x = 0
         startButton?.position.y = -20
-        startButton?.setScale(1.2)
+        startButton?.setScale(1)
         self.addChild(startButton!)
     }
     override func didMove(to view: SKView) {
