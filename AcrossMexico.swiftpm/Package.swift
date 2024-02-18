@@ -16,8 +16,8 @@ let package = Package(
         .iOSApplication(
             name: "AcrossMexico",
             targets: ["AppModule"],
-            bundleIdentifier: "bdelas.AcrossMexico",
-            teamIdentifier: "X5KY75J3RV",
+            bundleIdentifier: "bdelas.AcrossMexico.pruebas",
+            teamIdentifier: "23D44T2LM8",
             displayVersion: "1.0",
             bundleVersion: "1",
             appIcon: .placeholder(icon: .palette),
@@ -29,6 +29,9 @@ let package = Package(
             supportedInterfaceOrientations: [
                 .landscapeRight,
                 .landscapeLeft
+            ],
+            capabilities: [
+                .camera(purposeString: "Access to the camera is needed")
             ]
         )
     ],
