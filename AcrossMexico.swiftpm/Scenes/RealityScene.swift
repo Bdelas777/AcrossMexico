@@ -5,7 +5,6 @@
 //  Created by Alumno on 15/02/24.
 //
 
-// RealityScene.swift
 
 import SwiftUI
 import RealityKit
@@ -26,8 +25,9 @@ struct ARViewContainer: UIViewRepresentable {
         // Load the "Box" scene from the "Experience" Reality File
         let scene = try! Entity.load(named: "Regalo")
         
+        
         let boxAnchor = AnchorEntity(.plane(
-            [.vertical, .horizontal],
+            [ .horizontal],
             classification: [.floor],
             minimumBounds: [1.0, 1.0]
         ))

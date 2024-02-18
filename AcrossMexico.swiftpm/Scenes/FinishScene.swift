@@ -4,7 +4,6 @@
 //
 //  Created by Bernardo de la Sierra on 23/01/24.
 //
-// FinishScene.swift
 
 import Foundation
 import SpriteKit
@@ -67,6 +66,7 @@ class FinishScene: SKScene {
         // Present the UIHostingController
         viewController?.present(hostingController, animated: true, completion: nil)
     }
+
 
     func backgroundFinishSound() {
         backgroundFinishMusic.run(SKAction.changeVolume(to: Float(0.6), duration: 0))
