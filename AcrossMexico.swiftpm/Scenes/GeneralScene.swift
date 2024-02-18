@@ -72,76 +72,37 @@ class GeneralScene: SKScene {
     
     // Text Intro
     var introText: [String] = [
+        
         """
-        My name is Alex, I'm an archeologist on a quest\n\n
-        to explore the rich historical sites scattered\n\n
-        throughout Mexico.
+        My name is Alex, an archeologist exploring \n\n
+        Mexico's historical sites. Thrilled to have\n\n
+        you join me in uncovering valuable artifacts!.
         """,
         """
-        I'm genuinely thrilled to have you here \n\n
-        ready to join me in uncovering valuable \n\n
-        archaeological artifacts!
+        Before we start, familiar with what we're  \n\n
+        seeking? No? Here's a quick overview: significant \n\n
+        historical objects with cultural importance.
         """,
         """
-        But before we embark on this exciting\n\n
-        archaeological adventure, let me ask if you're\n\n
-        familiar with the artifacts we're seeking.
+        Mexico's vibrant history is encapsulated \n\n
+        in these artifacts, your assistance is crucial.\n\n
+        With my research, I've gathered knowledge
         """,
         """
-        No? Not to worry, let me provide you with \n\n
-        a quick overview.
+        about their significance.I've set up a\n\n
+        workspace for examination. My energy isn't \n\n
+        boundless, need your help.
         """,
         """
-        We're on the lookout for significant\n\n
-        historical objects that hold cultural \n\n
-        and archaeological importance.
+        Navigate sites, pay attention to details,\n\n
+        collect important objects.At the end,\n\n
+        a quiz awaits.Let's embark on this journey!
         """,
         """
-        Here in Mexico, our vibrant history is encapsulated \n\n
-        in these artifacts, and your assistance in locating \n\n
-        and identifying them is of utmost importance.
+        Explore, find artifacts, and bring them \n\n
+        back for examination!
         """,
-        """
-        Thanks to my research and studies within various\n\n
-        archaeological sites. \n\n
-        """,
-        """
-        I've gathered a wealth of knowledge about the \n\n
-        historical significance of these objects.
-        """,
-        """
-        I've even set up a dedicated workspace where \n\n
-        we can carefully examine and document these \n\n
-        artifacts once  you've discovered them!
-        """,
-        """
-        However, my energy is not as boundless \n\n
-        as it once was, and I'm in need of your help \n\n
-        to unearth these artifacts. \n\n
-        """,
-        """
-        Your task is to navigate through the \n\n
-        archaeological sites, paying close attention\n\n
-        to the details,
-        """,
-        """
-        and collecting the objects that hold\n\n
-        historical importance.
-        """,
-        """
-        At the end of our quest, there will be a\n\n
-        quiz to ensure we've gathered the correct\n\n
-        artifacts.
-        """,
-        """
-        So, let's embark on this archaeological\n\n
-        journey together!
-        """,
-        """
-        Explore the sites, find the artifacts, and \n\n
-        bring them back to our workspace for further \n\n
-        examination!
-        """
+       
     ]
     
     override func sceneDidLoad() {

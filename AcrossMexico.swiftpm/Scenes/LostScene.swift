@@ -37,7 +37,7 @@ class LostScene: SKScene {
     func restartGame() {
         GameManagerVM.currentIndex = 0
         let scene = GeneralScene()
-        scene.size = CGSize(width: 1400, height: 1300)
+        scene.size = CGSize(width: 1300, height: 1200)
         scene.scaleMode = .aspectFill
         scene.anchorPoint = .init(x: 0.5, y: 0.5)
         self.view?.presentScene(scene)

@@ -4,9 +4,12 @@
 //
 //  Created by Bernardo de la Sierra on 23/01/24.
 //
+// FinishScene.swift
+
 import Foundation
 import SpriteKit
 import RealityKit
+import SwiftUI
 
 // Protocolo para notificar al administrador del juego cuando se reinicia la escena
 protocol FinishSceneDelegate: AnyObject {
@@ -33,16 +36,16 @@ class FinishScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
-            self.scaleMode = .aspectFill
-            
-            // Crear y configurar el botón de retry
-            gift = SKButtonNode(imageNamed: "gift", clickAction: { [weak self] in
-                self?.navigateToRealityScene()
-            })
-            gift?.position = CGPoint(x: 0, y: -70)
-            gift?.setScale(1)
-            self.addChild(gift!)
-        }
+        self.scaleMode = .aspectFill
+        
+        // Crear y configurar el botón de retry
+        gift = SKButtonNode(imageNamed: "gift", clickAction: { [weak self] in
+            self?.navigateToRealityScene()
+        })
+        gift?.position = CGPoint(x: 0, y: -70)
+        gift?.setScale(1)
+        self.addChild(gift!)
+    }
 
     func restartGame() {
         // Notificar al delegado que se reinició la escena
@@ -52,19 +55,18 @@ class FinishScene: SKScene {
     func navigateToRealityScene() {
         finishSceneDelegate?.didFinishSceneRestart()
 
+        // Encuentra el controlador de vista actual
+        var viewController: UIViewController? = self.view?.window?.rootViewController
+        while viewController?.presentedViewController != nil {
+            viewController = viewController?.presentedViewController
+        }
 
-         // Encuentra el controlador de vista actual
-         var viewController: UIViewController? = self.view?.window?.rootViewController
-         while viewController?.presentedViewController != nil {
-             viewController = viewController?.presentedViewController
-         }
-         
-         // Crea e instancia la escena de RealityKit
-         let realityScene = RealityScene()
-         
-         // Presenta la escena de RealityKit
-         viewController?.present(realityScene, animated: true, completion: nil)
-     }
+        // Create a UIHostingController for RealityScene
+        let hostingController = UIHostingController(rootView: RealityScene())
+
+        // Present the UIHostingController
+        viewController?.present(hostingController, animated: true, completion: nil)
+    }
 
     func backgroundFinishSound() {
         backgroundFinishMusic.run(SKAction.changeVolume(to: Float(0.6), duration: 0))
@@ -72,4 +74,3 @@ class FinishScene: SKScene {
         self.addChild(backgroundFinishMusic)
     }
 }
-
