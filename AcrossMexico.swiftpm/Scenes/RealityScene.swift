@@ -10,8 +10,30 @@ import SwiftUI
 import RealityKit
 
 struct RealityScene: View {
+    @State private var isModelLoaded = false
+    
     var body: some View {
-        ARViewContainer().edgesIgnoringSafeArea(.all)
+        if isModelLoaded {
+            ARViewContainer().edgesIgnoringSafeArea(.all)
+        } else {
+            ProgressView("Loading...")
+                .onAppear {
+                    // Aquí cargas el modelo de forma asíncrona
+                    loadModelAsync()
+                }
+        }
+    }
+    
+    private func loadModelAsync() {
+        // Carga el modelo de forma asíncrona
+        DispatchQueue.global().async {
+            _ = try? Entity.load(named: "Regalo")
+            
+            // Actualiza el estado en el hilo principal cuando se complete la carga
+            DispatchQueue.main.async {
+                self.isModelLoaded = true
+            }
+        }
     }
 }
 
