@@ -22,7 +22,7 @@ struct ARViewContainer: UIViewRepresentable {
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
         arView.cameraMode = .ar
-
+        
         // Load the model asynchronously
         loadModel(on: arView)
 
