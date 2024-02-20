@@ -23,7 +23,7 @@ class GameManagerVM : ObservableObject ,FinishSceneDelegate {
     
     
     var timer = Timer()
-    var maxProgress = 20
+    var maxProgress = 50
     @Published var progress = 0
     
     init() {
