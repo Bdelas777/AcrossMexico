@@ -11,20 +11,36 @@ import RealityKit
 
 struct RealityScene: View {
     @State private var isModelLoaded = false
+    @State private var showPopup = false
 
     var body: some View {
-        if isModelLoaded {
+        ZStack {
             ARViewContainer().edgesIgnoringSafeArea(.all)
-        } else {
-            ProgressView("Please focus the camera on a horizontal surface for 10-15 seconds for the models to load.")
-                .onAppear {
-                    // Aquí puedes realizar la carga del modelo de forma asíncrona
-                    // Por ejemplo, podrías usar DispatchQueue para simular una carga asíncrona
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        isModelLoaded = true // Marca el modelo como cargado
-                    }
-                }
+            
+            if showPopup {
+                popupMessage
+            }
         }
+        .onAppear {
+            // Aquí puedes realizar la carga del modelo de forma asíncrona
+            // Por ejemplo, podrías usar DispatchQueue para simular una carga asíncrona
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                isModelLoaded = true // Marca el modelo como cargado
+                if !isModelLoaded {
+                    // Muestra el popup si el modelo no se ha cargado después de un tiempo
+                    showPopup = true
+                }
+            }
+        }
+    }
+
+    var popupMessage: some View {
+        Alert(title: Text("Attention"),
+              message: Text("Please focus the camera on a horizontal surface for 10-15 seconds for the models to load."),
+              dismissButton: .default(Text("OK")) {
+                  // Cerrar el popup
+                  showPopup = false
+              })
     }
 }
 
