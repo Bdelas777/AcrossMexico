@@ -1,8 +1,8 @@
 //
-//  File.swift
-//  
+//  realityScene.swift
+//  AcrossMexico
 //
-//  Created by Alumno on 15/02/24.
+//  Created by Bernardo dela Sierra on 15/02/2024.
 //
 
 
