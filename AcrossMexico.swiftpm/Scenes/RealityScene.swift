@@ -16,7 +16,7 @@ struct RealityScene: View {
         if isModelLoaded {
             ARViewContainer().edgesIgnoringSafeArea(.all)
         } else {
-            ProgressView("Loading, please, when finished zoom focus on a horizontal surface or the floor")
+            ProgressView("Loading... When loaded please focus the camera on a horizontal surface. Models will take 10-15 seconds to load.")
                 .onAppear {
                     // Aquí puedes realizar la carga del modelo de forma asíncrona
                     // Por ejemplo, podrías usar DispatchQueue para simular una carga asíncrona
