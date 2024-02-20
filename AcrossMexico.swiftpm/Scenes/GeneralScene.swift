@@ -74,33 +74,35 @@ class GeneralScene: SKScene {
     var introText: [String] = [
         
         """
-        My name is Alex, an archeologist exploring \n\n
-        Mexico's historical sites. Thrilled to have\n\n
-        you join me in uncovering valuable artifacts!.
+        Hello! I'm Bernardo, a Mexican passionate about \n\n
+        my country's culture and history. Having lived  \n\n
+        in 7 different cities across Mexico,
         """,
         """
-        Before we start, familiar with what we're  \n\n
-        seeking? No? Here's a quick overview: significant \n\n
-        historical objects with cultural importance.
+        I've created an app to share my knowledge with   \n\n
+        you.  My aim is to unveil fascinating aspects \n\n
+        and curiosities unknown to many Mexicans,
         """,
         """
-        Mexico's vibrant history is encapsulated \n\n
-        in these artifacts, your assistance is crucial.\n\n
-        With my research, I've gathered knowledge
+        inviting you on an exhilarating journey of \n\n
+        exploration and discovery through my eyes.\n\n
+        Our expedition focuses on uncovering culturally
+        """,
+                
+        """
+        significant historical artifacts that encapsulate\n\n
+        Mexico's vibrant history. While I've gathered \n\n
+        valuable information, your help in exploring
         """,
         """
-        about their significance.I've set up a\n\n
-        workspace for examination. My energy isn't \n\n
-        boundless, need your help.
+        sites, paying attention to details,and collecting\n\n
+        important objects is vital. At the end of our\n\n
+        adventure, a quiz awaits to test your knowledge,
         """,
         """
-        Navigate sites, pay attention to details,\n\n
-        collect important objects.At the end,\n\n
-        a quiz awaits.Let's embark on this journey!
-        """,
-        """
-        Explore, find artifacts, and bring them \n\n
-        back for examination!
+        so gear up for this thrilling mission of\n\n
+        discovering our historical treasures! Are\n\n
+        you ready to embark.
         """,
        
     ]

@@ -33,7 +33,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                     self?.collectPlantsMusic.removeFromParent()
                     self!.pauseTime = false
                 })
-                self?.collectCannonButton?.position.x = 1240
+                self?.collectCannonButton?.position.x = 1140
                 self?.collectCannonButton?.position.y = -60
                 self?.collectCannonButton?.setScale(0.25)
                 self?.addChild(self!.collectCannonButton!)
@@ -47,7 +47,7 @@ extension GeneralScene: SKPhysicsContactDelegate {
                     self?.cancelPlantsMusic.removeFromParent()
                     self?.pauseTime = false
                 })
-                self?.cancelCannonButton?.position.x = 1120
+                self?.cancelCannonButton?.position.x = 1020
                 self?.cancelCannonButton?.position.y = -60
                 self?.cancelCannonButton?.setScale(0.25)
                 self?.addChild(self!.cancelCannonButton!)
