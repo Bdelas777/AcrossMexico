@@ -34,7 +34,7 @@ struct ARViewContainer: UIViewRepresentable {
         arView.cameraMode = .ar
 
         // Load the "Regalo" scene from the Reality File
-        let scene = try! Entity.load(named: "Regalo")
+        let scene = try! Entity.load(named:"Gift")
 
         let boxAnchor = AnchorEntity(.plane(
             [ .horizontal],
