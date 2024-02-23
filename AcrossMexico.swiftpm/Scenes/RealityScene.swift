@@ -39,7 +39,7 @@ struct ARViewContainer: UIViewRepresentable {
         let boxAnchor = AnchorEntity(.plane(
             [ .horizontal],
             classification: [.floor],
-            minimumBounds: [1.0, 1.0]
+            minimumBounds: [0.1, 0.1]
         ))
 
         boxAnchor.addChild(scene)
